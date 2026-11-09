@@ -1,0 +1,14 @@
+{
+  "id": "04",
+  "slug": "pastel-karalama",
+  "name": "Pastel Karalama",
+  "nameEn": "Crayon Doodle",
+  "category": "el-yapimi",
+  "tagline": "Çocuk elinden mum boya: taşan taramalar, titreşen çizgiler",
+  "bestFor": "Okul öncesi, renkler ve hava olayları, eğlenceli soru-cevaplar",
+  "examples": ["Gökkuşağı nasıl oluşur?", "Bulutlar neden beyaz?", "Gece neden karanlık olur?"],
+  "palette": [["#FBF8F1", "Defter kâğıdı"], ["#E5403A", "Kırmızı"], ["#F28C28", "Turuncu"], ["#F7CB2D", "Sarı"], ["#4FAF4A", "Yeşil"], ["#2F7FD1", "Mavi"], ["#7B4FB8", "Mor"], ["#24357A", "Lacivert"]],
+  "fonts": ["Patrick Hand 400"],
+  "signature": ["Tek bir kâğıt dişi maskesinden gelen mum boya dokusu", "Çizginin dışına taşan zikzak taramalar", "Saniyede 8 kez titreşen el çizimi çizgiler", "Spiral defter sayfası çevrilerek geçiş"],
+  "preview": { "topic": "Gökkuşağı nasıl oluşur?", "duration": 8 }
+}

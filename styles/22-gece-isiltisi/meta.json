@@ -1,0 +1,14 @@
+{
+  "id": "22",
+  "slug": "gece-isiltisi",
+  "name": "Gece Işıltısı",
+  "nameEn": "Night Glow",
+  "category": "isik-dijital",
+  "tagline": "Ay ışığında bir çayır: koyu lacivert gece, kıpırdayan yıldızlar, kendi ışığını saçan canlılar",
+  "bestFor": "Gece hayvanları, biyolüminesans, gökyüzü ve uyku konuları; sakin, büyülü, uyku öncesi tadında videolar",
+  "examples": ["Ateşböcekleri nasıl parlar?", "Denizde parlayan canlılar kimler?", "Baykuşlar karanlıkta nasıl avlanır?"],
+  "palette": [["#070A22", "Gece mavisi"], ["#26306A", "Ufuk laciverdi"], ["#D8FF6A", "Ateşböceği ışığı"], ["#FFF6D2", "Sıcak parıltı"], ["#8FD3FF", "Soğuk mavi"], ["#F2C14E", "Kalkan sarısı"]],
+  "fonts": ["Comfortaa 600 / 700"],
+  "signature": ["Toplanarak parlayan (lighter) ışık hâleleri", "Ay ışığı kenar parlaması olan silüetler", "Hafifçe ışıldayan yuvarlak yazılar", "Işıkla çizilen iz ve ekranı dolduran parlama"],
+  "preview": { "topic": "Ateşböcekleri nasıl parlar?", "duration": 8 }
+}

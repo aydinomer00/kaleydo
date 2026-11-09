@@ -1,0 +1,14 @@
+{
+  "id": "07",
+  "slug": "karton-atolye",
+  "name": "Karton Atölye",
+  "nameEn": "Cardboard Workshop",
+  "category": "el-yapimi",
+  "tagline": "Oluklu karton, koli bandı, keçeli kalem ve damga",
+  "bestFor": "Geri dönüşüm, süreç ve fabrika anlatımları, kendin yap ruhu",
+  "examples": ["Kâğıt nasıl geri dönüşür?", "Çöp nereye gider?", "Kompost nasıl yapılır?"],
+  "palette": [["#C79A66", "Kraft"], ["#E6C89A", "Kesik kenar"], ["#E9D7A6", "Kâğıt bant"], ["#1F1D1C", "Keçeli kalem"], ["#3D7CC9", "Mavi kalem"], ["#D23B33", "Damga kırmızısı"], ["#F4F1EA", "Beyaz kâğıt"]],
+  "fonts": ["Amatic SC 700"],
+  "signature": ["Kesik kenarda görünen dalgalı oluk", "Kâğıt bant üstüne kalemle yazılmış etiketler", "Mürekkebi eksik kırmızı damga", "Kutu kapaklarıyla açılıp kapanan döngü"],
+  "preview": { "topic": "Kâğıt nasıl geri dönüşür?", "duration": 8 }
+}

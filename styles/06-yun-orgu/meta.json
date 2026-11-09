@@ -1,0 +1,14 @@
+{
+  "id": "06",
+  "slug": "yun-orgu",
+  "name": "Yün Örgü",
+  "nameEn": "Knitted Yarn",
+  "category": "el-yapimi",
+  "tagline": "Bütün görüntü ilmek ilmek örülmüş bir kazak deseni",
+  "bestFor": "Kuşlar ve yuvalar, kış ve hayvan tüyü, sıcak ve kucaklayıcı anlatımlar",
+  "examples": ["Kuşlar yuvayı nasıl örer?", "Koyunun yünü nasıl kazak olur?", "Hayvanlar kışın nasıl ısınır?"],
+  "palette": [["#F7EEDC", "Krem yün"], ["#A9CFE0", "Gök mavisi"], ["#F4C542", "Hardal"], ["#7A5236", "Kahve"], ["#6FAE5B", "Yaprak"], ["#D9483B", "Kırmızı"], ["#F29B38", "Turuncu"], ["#4A3A5C", "Mürdüm"]],
+  "fonts": ["Quicksand 600 / 700"],
+  "signature": ["Her hücresi gölgeli, bükümlü bir V ilmek olan şema", "Animasyonun kendisi değişen bir örgü şeması", "Sıra sıra örülerek açılış, sökülerek kapanış", "İplikle işlenmiş gibi çerçeveli yazılar"],
+  "preview": { "topic": "Kuşlar yuvayı nasıl örer?", "duration": 8 }
+}

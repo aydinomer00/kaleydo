@@ -1,0 +1,14 @@
+{
+  "id": "25",
+  "slug": "mozaik-tas",
+  "name": "Mozaik Taş",
+  "nameEn": "Stone Mosaic",
+  "category": "isik-dijital",
+  "tagline": "Hareket eden antik taş mozaik: harç arasında binlerce tessera, zikzak bordür, taşlarla yazılmış yazıt",
+  "bestFor": "Deniz canlıları, göç ve yolculuk, tarih ve kültürle buluşan doğa konuları; 'eski zamanlardan beri' anlatımları",
+  "examples": ["Deniz kaplumbağası yuvaya nasıl döner?", "Yunuslar nasıl uyur?", "Zeytin ağacı neden bu kadar uzun yaşar?"],
+  "palette": [["#2E6A84", "Deniz taşı"], ["#D6BC8A", "Kum taşı"], ["#9C6B3C", "Kahve mermer"], ["#B4553A", "Kiremit"], ["#D9A93B", "Altın tessera"], ["#2B2522", "Kara taş"]],
+  "fonts": ["Cinzel 700"],
+  "signature": ["Her taşı ayrı renklendirilen canlı mozaik", "Taşlarla dizilmiş büyük harfli yazıt", "Pırıldayan altın tesseralar", "Taşların dalga hâlinde dönerek sahneyi değiştirmesi"],
+  "preview": { "topic": "Deniz kaplumbağası yuvaya nasıl döner?", "duration": 8 }
+}

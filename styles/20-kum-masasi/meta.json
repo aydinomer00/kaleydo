@@ -1,0 +1,14 @@
+{
+  "id": "20",
+  "slug": "kum-masasi",
+  "name": "Kum Masası",
+  "nameEn": "Sand Table",
+  "category": "baski-cizim",
+  "tagline": "Işıklı masada kum animasyonu: dökülen koyu kum, parmakla açılan parlak çizgiler, avuçla silinen sahne",
+  "bestFor": "Çöl, kıyı, rüzgâr ve toprakla ilgili konular; dönüşüm ve hareket anlatımları; büyüleyici, masalsı açılışlar",
+  "examples": ["Kum tepeleri nasıl yürür?", "Kum saati neden hep aynı sürede akar?", "Deniz kabukları nasıl oluşur?"],
+  "palette": [["#FFF1CC", "Işık merkezi"], ["#F9C978", "Kehribar ışık"], ["#DE8C3A", "Turuncu kenar"], ["#3A2311", "Kalın kum"], ["#96602E", "Kum tanesi"]],
+  "fonts": ["Raleway 600"],
+  "signature": ["Kalınlığa göre koyulaşan, arkadan aydınlatılmış kum", "Kenarında itilmiş kum birikintisi olan parmak çizgileri", "Zıplayarak taşınan kum taneleri", "Avuçla süpürülüp düzlenen masa"],
+  "preview": { "topic": "Kum tepeleri nasıl yürür?", "duration": 8 }
+}

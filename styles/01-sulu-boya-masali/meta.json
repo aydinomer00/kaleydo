@@ -1,0 +1,14 @@
+{
+  "id": "01",
+  "slug": "sulu-boya-masali",
+  "name": "Sulu Boya Masalı",
+  "nameEn": "Watercolor Tale",
+  "category": "el-yapimi",
+  "tagline": "Saydam boya katmanları, ıslak kenarlar ve kurşun kalem taslağı",
+  "bestFor": "Masallar, mevsimler, su ve hava olayları, sakin anlatımlar",
+  "examples": ["Yağmur nereden gelir?", "Mevsimler neden değişir?", "Gökkuşağı nasıl oluşur?"],
+  "palette": [["#FAF6EC", "Kâğıt"], ["#3F64A8", "Ultramarin"], ["#6FA8D2", "Seruleum"], ["#6E9B5A", "Yaprak yeşili"], ["#E2A93B", "Okra"], ["#B5643C", "Toprak"], ["#34404E", "Mürekkep"]],
+  "fonts": ["Fraunces 600 / 700"],
+  "signature": ["Kurşun kalem taslağın içine yayılan boya", "Kenarlarda biriken pigment ve kâğıt dokusunda tanecikler", "Temiz suyla boyayı kaldırarak sayfayı silen geçiş"],
+  "preview": { "topic": "Yağmur nereden gelir?", "duration": 8 }
+}

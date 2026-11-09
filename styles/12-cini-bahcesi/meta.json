@@ -1,0 +1,14 @@
+{
+  "id": "12",
+  "slug": "cini-bahcesi",
+  "name": "Çini Bahçesi",
+  "nameEn": "Tile Garden",
+  "category": "miras",
+  "tagline": "Sır altına fırçayla boyanmış karo pano: kobalt, turkuaz ve mercan kırmızısı",
+  "bestFor": "Çiçekler ve bitkiler, mevsimler, kültür ve tarih anlatımları",
+  "examples": ["Lale nasıl açar?", "Arılar çiçekleri nasıl seçer?", "Nar ağacı nasıl meyve verir?"],
+  "palette": [["#F7F4EC", "Beyaz astar"], ["#1F4E9B", "Kobalt"], ["#2BA3A7", "Turkuaz"], ["#C8402E", "Mercan kırmızısı"], ["#4E8B4E", "Yeşil"], ["#1B2840", "Kontur"], ["#D9D3C4", "Derz"]],
+  "fonts": ["Alegreya 700 / 800"],
+  "signature": ["Her karo kendi tonu, sır parlaklığı ve kenar birikmesiyle", "Önce kontur, sonra fırça izli renk", "Motifleri kesen derz çizgileri ve bordür frizleri", "Karoların dalga halinde ters döndüğü geçiş"],
+  "preview": { "topic": "Lale nasıl açar?", "duration": 8 }
+}

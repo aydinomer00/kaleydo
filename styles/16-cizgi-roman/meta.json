@@ -1,0 +1,14 @@
+{
+  "id": "16",
+  "slug": "cizgi-roman",
+  "name": "Çizgi Roman",
+  "nameEn": "Comic Book",
+  "category": "baski-cizim",
+  "tagline": "Basılı çizgi roman sayfası: kalın mürekkep panelleri, Ben-Day noktaları, ses efekti patlamaları",
+  "bestFor": "Hızlı, enerjik doğa olayları; sebep-sonuç zincirleri; 'aslında ne oluyor?' anlatımları",
+  "examples": ["Şimşek nasıl çakar?", "Volkan nasıl patlar?", "Kasırga nasıl oluşur?"],
+  "palette": [["#FBF6E9", "Gazete kâğıdı"], ["#141414", "Siyah mürekkep"], ["#2E9BD6", "Camgöbeği"], ["#E2367A", "Macenta"], ["#FFD23F", "Sarı"], ["#E23A2E", "Kırmızı"]],
+  "fonts": ["Bangers 400", "Nunito 900"],
+  "signature": ["Ben-Day nokta dolguları", "Siyah çizgiden kaymış renk baskısı", "Sarı anlatım kutuları ve ses efekti patlamaları", "Sayfanın büyüyen noktalarla eriyip kaybolması"],
+  "preview": { "topic": "Şimşek nasıl çakar?", "duration": 8 }
+}

@@ -1,0 +1,14 @@
+{
+  "id": "15",
+  "slug": "botanik-gravur",
+  "name": "Botanik Gravür",
+  "nameEn": "Botanical Engraving",
+  "category": "baski-cizim",
+  "tagline": "Bakır gravür levha: yalnızca tarama çizgileriyle ton, harfli şekiller ve lejant",
+  "bestFor": "Bitki ve hayvan anatomisi, kesitler, bilimsel merak uyandıran anlatımlar",
+  "examples": ["Bir tohumun içinde ne var?", "Bir çiçeğin parçaları neler?", "Kuş tüyü nasıl yapılmıştır?"],
+  "palette": [["#F7F0E0", "Eski kâğıt"], ["#F1E8D3", "Kalıp izi"], ["#3B2A1F", "Sepya mürekkep"], ["#7A4A2A", "Kahve vurgu"], ["#C9A77B", "Lekelenme"]],
+  "fonts": ["EB Garamond 500 / 600"],
+  "signature": ["Formun kıvrımını izleyen kontur taraması", "Gölgede kalınlaşan, ışıkta kopan çizgiler", "Harfli gösterge çizgileri ve lejant", "Levhayı cilalayarak silen geçiş"],
+  "preview": { "topic": "Bir tohumun içinde ne var?", "duration": 8 }
+}

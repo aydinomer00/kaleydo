@@ -1,0 +1,14 @@
+{
+  "id": "11",
+  "slug": "ebru-akisi",
+  "name": "Ebru Akışı",
+  "nameEn": "Marbling Flow",
+  "category": "miras",
+  "tagline": "Gerçek ebru matematiği: birbirini iten damlalar, tığla çekilen damarlar",
+  "bestFor": "Su, nehirler ve denizler, akış ve dönüşüm, sanat ve kültür anlatımları",
+  "examples": ["Nehirler denize nasıl ulaşır?", "Okyanus akıntıları nasıl oluşur?", "Rüzgâr neden eser?"],
+  "palette": [["#F3EAD8", "Tekne zemini"], ["#2D4A7A", "Çivit"], ["#3E6DB5", "Lacivert"], ["#4FA3A5", "Turkuaz"], ["#D9A441", "Aşı boyası"], ["#B5473A", "Kök boya"], ["#5E8F4E", "Yeşil"]],
+  "fonts": ["Marcellus 400"],
+  "signature": ["Her damla eski renkleri ebru formülüyle iter", "Tığ ve tarak darbeleri boyaları damarlandırır", "Akan şerit boyaları ikiye yararak ilerler", "Kâğıt serilip kaldırılır, tekne temizlenir"],
+  "preview": { "topic": "Nehirler denize nasıl ulaşır?", "duration": 8 }
+}

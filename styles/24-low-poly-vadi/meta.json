@@ -1,0 +1,14 @@
+{
+  "id": "24",
+  "slug": "low-poly-vadi",
+  "name": "Low-Poly Vadi",
+  "nameEn": "Low-Poly Valley",
+  "category": "isik-dijital",
+  "tagline": "Düz gölgeli üçgen yüzeylerden kurulmuş 3B diorama: kesit yüzlerinde kaya katmanları, koni ağaçlar",
+  "bestFor": "Yer şekilleri, jeoloji, iklim ve harita konuları; zamanla değişen manzaralar; 'içini görelim' anlatımları",
+  "examples": ["Dağlar nasıl oluşur?", "Volkanlar neden patlar?", "Nehirler vadileri nasıl oyar?"],
+  "palette": [["#7FB7E3", "Gök mavisi"], ["#F9C9A4", "Şafak şeftalisi"], ["#6DBF5A", "Çayır yeşili"], ["#8E8F99", "Kaya grisi"], ["#C9A26B", "Kum taşı"], ["#1F2D4D", "Gece laciverdi"]],
+  "fonts": ["Exo 2 700 / 800"],
+  "signature": ["Işık yönüne göre düz gölgelenen üçgenler", "Kesit yüzünde bükülen kaya katmanları", "Hafifçe salınan kamera ile yüzen diorama", "Üçgenlerin noktaya küçülüp yeniden büyümesi"],
+  "preview": { "topic": "Dağlar nasıl oluşur?", "duration": 8 }
+}

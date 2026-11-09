@@ -1,0 +1,14 @@
+{
+  "id": "17",
+  "slug": "doga-defteri",
+  "name": "Doğa Defteri",
+  "nameEn": "Field Journal",
+  "category": "baski-cizim",
+  "tagline": "Gezgin bir doğa bilimcinin spiralli defteri: kurşun kalem eskiz, suluboya lekeler, dolma kalem notlar",
+  "bestFor": "Hayvan gözlemleri, göç ve yolculuk hikâyeleri, haritalı anlatımlar, 'bugün ne keşfettim?' videoları",
+  "examples": ["Kırlangıçlar nereye gider?", "Karıncalar yolu nasıl bulur?", "Uğur böceğinin benekleri ne işe yarar?"],
+  "palette": [["#F7F1E3", "Defter kâğıdı"], ["#24365E", "Lacivert mürekkep"], ["#5C5752", "Kurşun kalem"], ["#C2553A", "Kızıl kalem"], ["#2F4C86", "Suluboya mavi"], ["#DDB46C", "Toprak sarısı"]],
+  "fonts": ["Caveat 600 / 700", "Inter 600 (basılı alanlar)"],
+  "signature": ["Önce kurşun kalem iskelet, sonra açan suluboya", "Canlı yazılan el yazısı notlar ve oklar", "Washi bantla yapıştırılmış harita kartı ve tüy", "Sayfanın spiralin üstünden çevrilmesi"],
+  "preview": { "topic": "Kırlangıçlar nereye gider?", "duration": 8 }
+}

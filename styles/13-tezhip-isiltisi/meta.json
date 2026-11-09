@@ -1,0 +1,14 @@
+{
+  "id": "13",
+  "slug": "tezhip-isiltisi",
+  "name": "Tezhip Işıltısı",
+  "nameEn": "Gilded Illumination",
+  "category": "miras",
+  "tagline": "Varak altın, lacivert zemin ve aharlı kâğıt; ışık vurdukça parlayan tezhip",
+  "bestFor": "Gökyüzü ve astronomi, mevsimler ve takvim, değerli ve törensel anlatımlar",
+  "examples": ["Ay neden şekil değiştirir?", "Yıldızlar neden parlar?", "Mevsimler neden oluşur?"],
+  "palette": [["#F1E6CC", "Aharlı kâğıt"], ["#16285A", "Lacivert"], ["#C9A23C", "Altın"], ["#F6E3A1", "Altın parıltısı"], ["#8C6A1F", "Koyu altın"], ["#B33A2E", "Lal kırmızısı"], ["#F7EFDA", "Krem"]],
+  "fonts": ["Cinzel Decorative 700", "Cinzel 600 / 700"],
+  "signature": ["Üzerinde parıltı kayan, varak dokulu altın", "Kendini çizen asma bordür ve köşe rozetleri", "Lacivert gökte altın yıldızlar ve madalyonlar", "Altın tozuyla sayfayı silen çapraz süpürme"],
+  "preview": { "topic": "Ay neden şekil değiştirir?", "duration": 8 }
+}

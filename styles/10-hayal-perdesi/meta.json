@@ -1,0 +1,14 @@
+{
+  "id": "10",
+  "slug": "hayal-perdesi",
+  "name": "Hayal Perdesi",
+  "nameEn": "Shadow Play",
+  "category": "miras",
+  "tagline": "Mum ışığıyla aydınlanan perde, renkli deriden yarı saydam figürler",
+  "bestFor": "Gece hayvanları, masallar ve halk hikâyeleri, gökyüzü ve Ay",
+  "examples": ["Baykuş geceleri nasıl görür?", "Ay neden şekil değiştirir?", "Yarasalar karanlıkta yolu nasıl bulur?"],
+  "palette": [["#FBEFD2", "Perde ışığı"], ["#F2C77E", "Mum sıcaklığı"], ["#2B1A12", "Çerçeve"], ["#C8A04A", "Yaldız"], ["#E3A33C", "Safran"], ["#B8432F", "Kök boya"], ["#3E5C8A", "Çivit"], ["#5E8B4A", "Yaprak"]],
+  "fonts": ["Cormorant Garamond 600 / 700"],
+  "signature": ["Işığı boyayan yarı saydam renkli figürler ve delikli süsler", "Görünür çubuklar, mafsallı kanatlar ve kollar", "Harfleri oyulmuş, içinden ışık sızan levhalar", "Perdeden uzaklaştıkça büyüyüp bulanıklaşan gölgeler"],
+  "preview": { "topic": "Baykuş geceleri nasıl görür?", "duration": 8 }
+}

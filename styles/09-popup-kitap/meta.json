@@ -1,0 +1,14 @@
+{
+  "id": "09",
+  "slug": "popup-kitap",
+  "name": "Pop-up Kitap",
+  "nameEn": "Pop-up Book",
+  "category": "el-yapimi",
+  "tagline": "Sayfadan ayağa kalkan katmanlar, çekmeli şeritler, kaldırmalı kapakçıklar",
+  "bestFor": "Büyüme ve dönüşüm, bitkiler, adım adım süreçler, masal kitabı havası",
+  "examples": ["Tohum nasıl ağaç olur?", "Bir nehir nasıl doğar?", "Arı kovanının içinde ne var?"],
+  "palette": [["#FBF6EA", "Sayfa"], ["#EAF3F4", "Gök sayfası"], ["#2E5E4E", "Cilt yeşili"], ["#E2B85B", "Yaldız"], ["#8A5A3B", "Toprak"], ["#7CC46B", "Yaprak"], ["#F4B740", "Güneş"], ["#D2533F", "Şerit kırmızısı"]],
+  "fonts": ["DM Serif Display 400", "DM Sans 500 / 700"],
+  "signature": ["90° açılan kitapta dik arka sayfa ve yatay ön sayfa", "Menteşesinden kalkan, kalkarken kararan katmanlar", "Hareketi başlatan ÇEK şeridi", "Kaldırmalı kapakçık etiketler, kitabın kapanmasıyla döngü"],
+  "preview": { "topic": "Tohum nasıl ağaç olur?", "duration": 8 }
+}

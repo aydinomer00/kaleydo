@@ -1,0 +1,14 @@
+{
+  "id": "02",
+  "slug": "kece-diyari",
+  "name": "Keçe Diyarı",
+  "nameEn": "Felt Land",
+  "category": "el-yapimi",
+  "tagline": "Tüylü kenarlı keçe parçalar, dikiş izleri ve düğmeler",
+  "bestFor": "Küçük yaşlar, hayvanlar ve yaşam döngüleri, sıcak ve sakin hikâyeler",
+  "examples": ["Tırtıl nasıl kelebek olur?", "Kuşlar yuvayı nasıl yapar?", "Kaplumbağa neden yavaştır?"],
+  "palette": [["#BFD7DF", "Gök keçe"], ["#8DBE7A", "Çimen"], ["#5E9B57", "Yaprak"], ["#F2C14E", "Güneş"], ["#E8834E", "Turuncu"], ["#D9594C", "Kırmızı iplik"], ["#F4E9D8", "Krem keçe"], ["#4A3428", "Kahve"]],
+  "fonts": ["Baloo 2 700 / 800"],
+  "signature": ["Her parçada tüylü kenar ve görünür dikiş", "Numaralar düğme rozetlerinde", "Uçuş yolları iplikle dikiliyor", "Keçe kitap sayfası çevrilerek geçiş"],
+  "preview": { "topic": "Tırtıl nasıl kelebek olur?", "duration": 8 }
+}

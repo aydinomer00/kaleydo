@@ -1,0 +1,14 @@
+{
+  "id": "05",
+  "slug": "ahsap-oyuncak",
+  "name": "Ahşap Oyuncak",
+  "nameEn": "Wooden Toy",
+  "category": "el-yapimi",
+  "tagline": "Boyalı ahşap parçalar, görünen damarlar ve atmış boya kenarları",
+  "bestFor": "Ağaçlar ve ormanlar, sayma ve büyüklük karşılaştırmaları, Montessori havası",
+  "examples": ["Ağaçlar yaşını nasıl saklar?", "Bir orman kaç yılda büyür?", "Arılar kovanı nasıl kurar?"],
+  "palette": [["#DCEDE4", "Nane duvar"], ["#E9CC9E", "Huş masa"], ["#E7C48E", "Ham ahşap"], ["#B9874F", "Halka"], ["#D94B3C", "Kırmızı boya"], ["#4E9F55", "Yeşil boya"], ["#F2B93B", "Sarı boya"], ["#3F7CC4", "Mavi boya"]],
+  "fonts": ["Nunito 800 / 900"],
+  "signature": ["Boyanın altından görünen damar ve kenarda atmış boya", "Düz yüz, yuvarlatılmış kenar ışığı", "Tekerlek gibi yuvarlanan, elle oynatılan oyuncaklar", "Her şeyin devrilip masadan düştüğü geçiş"],
+  "preview": { "topic": "Ağaçlar yaşını nasıl saklar?", "duration": 8 }
+}

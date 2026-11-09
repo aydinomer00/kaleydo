@@ -1,0 +1,14 @@
+{
+  "id": "23",
+  "slug": "vitray-isigi",
+  "name": "Vitray Işığı",
+  "nameEn": "Stained Glass Light",
+  "category": "isik-dijital",
+  "tagline": "Taş duvarda sivri kemerli vitray: kurşun çerçeveli renkli camlar, içinden süzülen ve yere düşen ışık",
+  "bestFor": "Renk, ışık ve mevsim konuları; çiçekler ve böcekler; masalsı, görkemli, 'büyük fikir' anlatımları",
+  "examples": ["Çiçekler neden renkli?", "Gökkuşağının renkleri nereden gelir?", "Kelebek kanatları neden bu kadar renkli?"],
+  "palette": [["#3B82C4", "Gök camı"], ["#F7D46A", "Güneş camı"], ["#D2245B", "Gül camı"], ["#3FA34D", "Çimen camı"], ["#1F1C22", "Kurşun"], ["#E8C77A", "Yaldız"]],
+  "fonts": ["Philosopher 700"],
+  "signature": ["Kurşun çerçeveli, damarlı ve kabarcıklı cam parçaları", "Güneşten başlayarak parça parça yanan ışık", "Cam üstüne boyanmış yazılı şerit", "Pencerenin önünden geçen bulut gölgesi"],
+  "preview": { "topic": "Çiçekler neden renkli?", "duration": 8 }
+}

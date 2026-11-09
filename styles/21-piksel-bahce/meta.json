@@ -1,0 +1,14 @@
+{
+  "id": "21",
+  "slug": "piksel-bahce",
+  "name": "Piksel Bahçe",
+  "nameEn": "Pixel Garden",
+  "category": "isik-dijital",
+  "tagline": "Özgün retro oyun sahnesi: sert pikseller, titreşimli renk geçişleri, daktilo diyalog kutusu ve seviye çubuğu",
+  "bestFor": "Yaşam döngüleri, aşama aşama süreçler, 'seviye atlama' mantığıyla anlatılan gelişim konuları",
+  "examples": ["Kurbağa nasıl büyür?", "Tohum nasıl filizlenir?", "Kelebek kaç aşamadan geçer?"],
+  "palette": [["#6EC1F0", "Gökyüzü"], ["#2C76B0", "Gölet"], ["#7AC74F", "Kurbağa yeşili"], ["#FFD54F", "Altın sarısı"], ["#FF8FB1", "Nilüfer pembesi"], ["#1B1B2F", "Piksel çerçeve"]],
+  "fonts": ["Press Start 2P 400"],
+  "signature": ["180×320 tuval, 6 kat büyütülmüş sert pikseller", "Bayer titreşimli gökyüzü ve su geçişleri", "Harf harf yazılan diyalog kutusu", "Elmas desenli ekran geçişi"],
+  "preview": { "topic": "Kurbağa nasıl büyür?", "duration": 8 }
+}

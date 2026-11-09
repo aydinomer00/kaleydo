@@ -1,0 +1,14 @@
+{
+  "id": "08",
+  "slug": "origami",
+  "name": "Origami",
+  "nameEn": "Origami",
+  "category": "el-yapimi",
+  "tagline": "Düz yüzeylerle katlanmış kâğıt, kendi kendine katlanan karakterler",
+  "bestFor": "Kuşlar ve göç, dağlar, dönüşüm anlatımları, sakin ve zarif anlatımlar",
+  "examples": ["Turnalar nasıl göç eder?", "Dağlar nasıl oluşur?", "Kurbağa nasıl büyür?"],
+  "palette": [["#CFE3EA", "Gök kâğıdı"], ["#F5EEE2", "Pirinç kâğıdı"], ["#D64545", "Kırmızı"], ["#2F3B66", "Çivit"], ["#6FA39A", "Deniz yeşili"], ["#9CC6BB", "Açık yeşil"], ["#F2A93B", "Safran"]],
+  "fonts": ["Josefin Sans 600 / 700"],
+  "signature": ["Her yüzeyi baktığı yöne göre tonlanan katlar", "Kare kâğıttan kendi kendine katlanan karakter", "Ucu geri katlanmış kâğıt kurdele etiketler", "Bütün sayfanın akordeon gibi katlandığı geçiş"],
+  "preview": { "topic": "Turnalar nasıl göç eder?", "duration": 8 }
+}

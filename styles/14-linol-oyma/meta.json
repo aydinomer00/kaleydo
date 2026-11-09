@@ -1,0 +1,14 @@
+{
+  "id": "14",
+  "slug": "linol-oyma",
+  "name": "Linol Oyma",
+  "nameEn": "Linocut Print",
+  "category": "baski-cizim",
+  "tagline": "İki renkli kabartma baskı: oyma izleri, mürekkep boşlukları, kayık kırmızı kalıp",
+  "bestFor": "Vahşi hayvanlar ve gece, dramatik anlatımlar, efsane ve gerçek karşılaştırmaları",
+  "examples": ["Kurtlar neden uluyor?", "Kartallar nasıl avlanır?", "Volkanlar nasıl patlar?"],
+  "palette": [["#F2EEE4", "Paçavra kâğıt"], ["#1C1A19", "Baskı mürekkebi"], ["#D2452F", "Kırmızı kalıp"]],
+  "fonts": ["Alfa Slab One 400"],
+  "signature": ["Siyah alanlara oyulmuş, iki ucu sivri oyma izleri", "Kâğıdın göründüğü mürekkep boşlukları", "6 piksel kayık basılmış kırmızı ikinci kalıp", "Saniyede 8 kez yeniden oyulan izler, köşeden soyulan baskı"],
+  "preview": { "topic": "Kurtlar neden uluyor?", "duration": 8 }
+}

@@ -1,0 +1,14 @@
+{
+  "id": "03",
+  "slug": "hamur-dunyasi",
+  "name": "Hamur Dünyası",
+  "nameEn": "Clay World",
+  "category": "el-yapimi",
+  "tagline": "Işıkla şişen oyun hamuru, parmak izleri ve stop-motion",
+  "bestFor": "Hayvan karakterleri, komik anlatımlar, küçük yaşlar",
+  "examples": ["Salyangoz evini neden taşır?", "Solucanlar toprağı nasıl besler?", "Kirpi neden diken taşır?"],
+  "palette": [["#CFE6EA", "Fon mavisi"], ["#F6E7C8", "Fon kremi"], ["#86BD6B", "Hamur yeşili"], ["#E07B39", "Turuncu"], ["#E25B4C", "Kırmızı"], ["#3FA7A0", "Turkuaz"], ["#F3C64B", "Sarı"], ["#3A2E2A", "Koyu kahve"]],
+  "fonts": ["Grandstander 800 / 900"],
+  "signature": ["Yükseklik haritasıyla ışıklanan şişkin hamur", "Hamurdan modellenmiş başlık harfleri", "12 kare/sn stop-motion ve küçük titreşim", "Merdane ile yeni sayfa açan geçiş"],
+  "preview": { "topic": "Salyangoz evini neden taşır?", "duration": 8 }
+}

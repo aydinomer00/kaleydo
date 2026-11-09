@@ -1,0 +1,14 @@
+{
+  "id": "18",
+  "slug": "tebesir-tahtasi",
+  "name": "Tebeşir Tahtası",
+  "nameEn": "Chalkboard Lesson",
+  "category": "baski-cizim",
+  "tagline": "Sınıftaki yeşil tahta: renkli tebeşirle canlı çizilen ders, tozlu hale, silgiyle temizlenen tahta",
+  "bestFor": "Süreç anlatımları, formüller ve döngüler, 'öğretmen anlatıyor' hissi veren eğitim videoları",
+  "examples": ["Yapraklar nasıl besin yapar?", "Su döngüsü nasıl işler?", "Mıknatıslar neden çeker?"],
+  "palette": [["#2C4A3E", "Yeşil tahta"], ["#F2F0E6", "Beyaz tebeşir"], ["#F5DE6E", "Sarı tebeşir"], ["#F2A3B5", "Pembe tebeşir"], ["#93CBEA", "Mavi tebeşir"], ["#A9DB8C", "Yeşil tebeşir"]],
+  "fonts": ["Kalam 700"],
+  "signature": ["Tahtanın pürüzünde kopan tebeşir çizgileri", "Eski derslerin silik izleri", "Tebeşirin yan yüzüyle yapılan tarama dolgu", "Toz bırakarak tahtayı silen silgi"],
+  "preview": { "topic": "Yapraklar nasıl besin yapar?", "duration": 8 }
+}

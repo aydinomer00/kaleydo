@@ -1,0 +1,14 @@
+{
+  "id": "19",
+  "slug": "murekkep-firca",
+  "name": "Mürekkep Fırça",
+  "nameEn": "Ink Brush",
+  "category": "baski-cizim",
+  "tagline": "Lifli kâğıda tek renk mürekkep: kuru fırça darbeleri, bol boşluk, kırmızı mühür",
+  "bestFor": "Bitkiler, büyüme ve zaman, sakin ve düşündüren anlatımlar, 'az ama öz' videolar",
+  "examples": ["Bambu nasıl bu kadar hızlı büyür?", "Lotus yaprağı neden ıslanmaz?", "Turna kuşları neden dans eder?"],
+  "palette": [["#F2EDE1", "Pirinç kâğıdı"], ["#1C1B1A", "Çini mürekkebi"], ["#7A7671", "Sulandırılmış mürekkep"], ["#9A8468", "Toprak lavı"], ["#C23A2B", "Mühür kırmızısı"]],
+  "fonts": ["Spectral 400 / 600"],
+  "signature": ["Boğum boğum, tek darbede çizilen kuru fırça gövdeler", "Fırçayla savrulan yapraklar", "Kırmızı taş mühür", "Su lekesinin resmi çözüp silmesi"],
+  "preview": { "topic": "Bambu nasıl bu kadar hızlı büyür?", "duration": 8 }
+}
