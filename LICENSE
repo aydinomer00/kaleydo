@@ -1,0 +1,12 @@
+Copyright (c) 2026 aydinomer00. Tüm hakları saklıdır. / All rights reserved.
+
+Bu depodaki kod, stil rehberleri, önizlemeler ve diğer içerikler sahibinin yazılı izni
+olmadan kopyalanamaz, dağıtılamaz, değiştirilemez ya da ticari amaçla kullanılamaz.
+
+The code, style guides, previews and all other content in this repository may not be
+copied, distributed, modified or used commercially without the owner's written permission.
+
+Üçüncü taraf bileşenler / Third-party components:
+- fonts/ klasöründeki yazı tipleri SIL Open Font License 1.1 ile dağıtılır; lisans metinleri
+  fonts/licenses/ altındadır. / The fonts in fonts/ are distributed under the SIL Open Font
+  License 1.1; the licence texts are in fonts/licenses/.
