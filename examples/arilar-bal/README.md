@@ -1,6 +1,6 @@
 # Örnek video · Arılar nasıl bal yapar?
 
-Kaleydo'deki stillerden önce yapılan ilk tam video: **25 saniye, 9:16 (1080×1920), 30 fps**, kâğıt kesik infografik görünümünde, sesleri tamamen kodla üretilmiş.
+Kaleydo'daki stillerden önce yapılan ilk tam video: **25 saniye, 9:16 (1080×1920), 30 fps**, kâğıt kesik infografik görünümünde, sesleri tamamen kodla üretilmiş.
 
 ![Önemli anlar](overview.jpg)
 

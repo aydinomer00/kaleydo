@@ -11,6 +11,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 16L16 1L29 8.5Z' fill='%23E2552C'/%3E%3Cpath d='M16 16L29 8.5L29 23.5Z' fill='%23F2B33D'/%3E%3Cpath d='M16 16L29 23.5L16 31Z' fill='%232C6E63'/%3E%3Cpath d='M16 16L16 31L3 23.5Z' fill='%233B5BA9'/%3E%3Cpath d='M16 16L3 23.5L3 8.5Z' fill='%238A4FB8'/%3E%3Cpath d='M16 16L3 8.5L16 1Z' fill='%23E2416E'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="engine/fonts.css">
 <link rel="stylesheet" href="site/app.css">
+<script>try { const t = JSON.parse(localStorage.getItem('kaleydo.theme')); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
 </head>
 <body>
 <a class="skip" href="#stiller">İçeriğe geç</a>
@@ -22,9 +23,11 @@
   </a>
   <nav aria-label="Bölümler">
     <a href="#stiller">Stiller</a>
+    <a href="#konular">Konu fikirleri</a>
     <a href="#olustur">Prompt oluştur</a>
     <a href="#nasil">Nasıl çalışır</a>
     <a class="gh" id="repoLink" href="https://github.com/aydinomer00/kaleydo">Kaynak kod</a>
+    <button class="theme" id="theme" type="button" aria-label="Tema: otomatik" title="Tema"><span aria-hidden="true">◐</span></button>
   </nav>
 </header>
 
@@ -64,6 +67,18 @@
     <p class="empty" id="empty" hidden>Aramana uyan stil bulunamadı.</p>
   </section>
 
+  <section id="konular" class="block">
+    <div class="block-head">
+      <h2>Konu fikirleri</h2>
+      <p>Çocukların merak ettiği doğa soruları ve her birine yakışan stiller. Bir konuya dokun: prompt oluşturucu o konu ve stille dolar.</p>
+    </div>
+    <div class="toolbar">
+      <div class="chips" id="tChips" role="tablist" aria-label="Konu grupları"></div>
+      <button class="btn" id="tDice" type="button"><span aria-hidden="true">🎲</span> Rastgele konu</button>
+    </div>
+    <div class="topics" id="topics"></div>
+  </section>
+
   <section id="olustur" class="block builder">
     <div class="block-head">
       <h2>Prompt oluştur</h2>
@@ -74,6 +89,7 @@
         <label class="field"><span>Stil</span><select id="fStyle"></select></label>
         <label class="field"><span>Konu</span><input id="fTopic" type="text" placeholder="ör. Arılar nasıl bal yapar?"></label>
         <div class="examples" id="fExamples" aria-label="Örnek konular"></div>
+        <div class="suggest" id="fSuggest" aria-live="polite"></div>
         <fieldset class="field"><legend>Süre</legend>
           <div class="seg" id="fDur">
             <button type="button" data-v="15">15 sn</button><button type="button" data-v="25">25 sn</button><button type="button" data-v="30">30 sn</button><button type="button" data-v="45">45 sn</button><button type="button" data-v="60">60 sn</button>
@@ -99,7 +115,21 @@
           <label class="toggle"><input id="fSfx" type="checkbox" checked><span>Ses efektleri</span></label>
           <label class="toggle"><input id="fMusic" type="checkbox"><span>Fon müziği</span></label>
         </div>
-        <label class="field"><span>Ek notlar</span><textarea id="fNotes" rows="3" placeholder="ör. Kanal logosu sağ üstte dursun, sonda ‘Takip et!’ yazsın."></textarea></label>
+        <fieldset class="field"><legend>Kanal kimliği <span class="muted small">(isteğe bağlı; her bölümde aynı kalır)</span></legend>
+          <input id="fChan" type="text" placeholder="Kanal adı, ör. Minik Kâşifler">
+          <div class="row2 gap"><input id="fKick" type="text" placeholder="Açılış satırı, ör. DOĞAYI SEVELİM"><input id="fOutro" type="text" placeholder="Kapanış kartı, ör. Yeni bölümde görüşürüz!"></div>
+        </fieldset>
+        <fieldset class="field"><legend>Yayın paketi</legend>
+          <div class="toggles3">
+            <label class="toggle"><input id="fMeta" type="checkbox"><span>Başlık, açıklama, etiketler</span></label>
+            <label class="toggle"><input id="fThumb" type="checkbox"><span>Kapak görseli</span></label>
+            <label class="toggle"><input id="fSrt" type="checkbox"><span>Altyazı (.srt)</span></label>
+          </div>
+        </fieldset>
+        <label class="field"><span>Ek notlar</span><textarea id="fNotes" rows="3" placeholder="ör. Kanal logosu sağ üstte dursun."></textarea></label>
+        <fieldset class="field"><legend>Seri <span class="muted small">(her satıra bir konu; aynı stil ve kimlikle bölümler)</span></legend>
+          <textarea id="fSeries" rows="4" placeholder="Yarasalar karanlıkta yolu nasıl bulur?&#10;Baykuşlar başını nasıl çevirir?&#10;Ateşböcekleri nasıl parlar?"></textarea>
+        </fieldset>
       </form>
       <div class="panel out">
         <div class="out-head">
@@ -110,6 +140,8 @@
         <div class="out-actions">
           <button class="btn primary" id="bCopy" type="button">Kopyala</button>
           <button class="btn" id="bDl" type="button">İndir (.md)</button>
+          <button class="btn" id="bSeries" type="button" hidden>Seriyi indir</button>
+          <button class="btn" id="bLink" type="button">Bağlantıyı kopyala</button>
           <button class="btn ghost" id="bReset" type="button">Sıfırla</button>
           <span class="toast" id="toast" role="status" aria-live="polite"></span>
         </div>
@@ -190,6 +222,7 @@ node tools/build-site.cjs</code></pre>
 </dialog>
 
 <script src="site/data.js"></script>
+<script src="site/konular.js"></script>
 <script src="site/app.js"></script>
 </body>
 </html>

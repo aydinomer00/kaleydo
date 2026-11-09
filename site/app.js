@@ -18,12 +18,23 @@
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const CAT = Object.fromEntries(D.categories.map(c => [c.id, c]));
   const store = { get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* private mode */ } } };
-  const slugify = s => lower(s).replace(/ç/g, 'c').replace(/ğ/g, 'g').replace(/ı/g, 'i').replace(/i̇/g, 'i').replace(/ö/g, 'o').replace(/ş/g, 's').replace(/ü/g, 'u').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 48) || 'video';
+  const slugify = s => lower(s).replace(/ç/g, 'c').replace(/ğ/g, 'g').replace(/ı/g, 'i').replace(/i̇/g, 'i').replace(/ö/g, 'o').replace(/ş/g, 's').replace(/ü/g, 'u').replace(/â/g, 'a').replace(/î/g, 'i').replace(/û/g, 'u').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 48) || 'video';
   $('#statStyles').textContent = D.styles.length;
+  const ICON = {
+    auto: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg>',
+    light: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>',
+    dark: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>',
+  };
+  const THEMES = [[null, 'otomatik', ICON.auto], ['light', 'açık', ICON.light], ['dark', 'koyu', ICON.dark]];
+  let themeI = Math.max(0, THEMES.findIndex(x => x[0] === (document.documentElement.dataset.theme || null)));
+  const paintTheme = () => { const [v, nm, ic] = THEMES[themeI]; if (v) document.documentElement.dataset.theme = v; else delete document.documentElement.dataset.theme; $('#theme').innerHTML = ic; $('#theme').setAttribute('aria-label', `Tema: ${nm}`); $('#theme').title = `Tema: ${nm}`; store.set('kaleydo.theme', v); };
+  $('#theme').addEventListener('click', () => { themeI = (themeI + 1) % THEMES.length; paintTheme(); });
+  paintTheme();
 
   // ---- cards ------------------------------------------------------------------------------------------------------
   const grid = $('#grid'), chips = $('#chips');
   let cat = 'all', query = '';
+  let favs = new Set(store.get('kaleydo.favs', []));
   const io = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
     for (const e of entries) {
       const v = e.target;
@@ -47,21 +58,32 @@
     if (io) io.observe(video); else video.src = s.video;
     const hoverPlay = () => { if (!video.src) video.src = video.dataset.src; video.play().catch(() => {}); };
     if (reduced) { card.addEventListener('mouseenter', hoverPlay); card.addEventListener('mouseleave', () => video.pause()); card.addEventListener('focus', hoverPlay); card.addEventListener('blur', () => video.pause()); }
-    grid.append(card);
-    return { card, s, text: lower([s.name, s.nameEn, s.tagline, s.bestFor, ...s.examples].join(' ')) };
+    const fav = h('button', { class: 'fav', type: 'button', 'aria-pressed': String(favs.has(s.id)), 'aria-label': `${s.name}: favorilere ekle`, title: 'Favori', onclick: () => toggleFav(s.id, fav) }, '♥');
+    const cell = h('div', { class: 'cell' }, card, fav);
+    grid.append(cell);
+    return { card: cell, s, text: lower([s.name, s.nameEn, s.tagline, s.bestFor, ...s.examples].join(' ')) };
   });
+  function toggleFav(id, btn) {
+    if (favs.has(id)) favs.delete(id); else favs.add(id);
+    btn.setAttribute('aria-pressed', String(favs.has(id)));
+    store.set('kaleydo.favs', [...favs]);
+    favChip.querySelector('.n').textContent = favs.size;
+    if (cat === 'fav') applyFilter();
+  }
 
-  const chipList = [{ id: 'all', name: 'Tümü' }, ...D.categories];
+  const chipList = [{ id: 'all', name: 'Tümü' }, ...D.categories, { id: 'fav', name: '♥ Favoriler' }];
   chipList.forEach(c => {
-    const n = c.id === 'all' ? D.styles.length : D.styles.filter(s => s.category === c.id).length;
+    const n = c.id === 'all' ? D.styles.length : c.id === 'fav' ? favs.size : D.styles.filter(s => s.category === c.id).length;
     chips.append(h('button', { class: 'chip', type: 'button', role: 'tab', 'aria-selected': String(c.id === 'all'), 'data-c': c.id, onclick: () => { cat = c.id; applyFilter(); } },
       c.id === 'all' ? null : h('span', { class: 'dot', style: `background:var(--c-${c.id})` }), c.name, h('span', { class: 'n', text: n })));
   });
+  const favChip = chips.querySelector('[data-c="fav"]');
   $('#q').addEventListener('input', e => { query = lower(e.target.value.trim()); applyFilter(); });
   function applyFilter() {
     let shown = 0;
-    for (const c of cards) { const ok = (cat === 'all' || c.s.category === cat) && (!query || c.text.includes(query)); c.card.hidden = !ok; if (ok) shown++; }
+    for (const c of cards) { const ok = (cat === 'all' || (cat === 'fav' ? favs.has(c.s.id) : c.s.category === cat)) && (!query || c.text.includes(query)); c.card.hidden = !ok; if (ok) shown++; }
     chips.querySelectorAll('.chip').forEach(b => b.setAttribute('aria-selected', String(b.dataset.c === cat)));
+    $('#empty').textContent = cat === 'fav' && !favs.size ? 'Henüz favori yok: kartların köşesindeki ♥ ile ekleyebilirsin.' : 'Aramana uyan stil bulunamadı.';
     $('#empty').hidden = shown > 0;
   }
 
@@ -103,8 +125,11 @@
   dlg.addEventListener('close', () => { frame.replaceChildren(); history.replaceState(null, '', location.pathname + location.search); });
 
   // ---- prompt builder -----------------------------------------------------------------------------------------------
-  const DEF = { style: D.styles[0].id, topic: '', dur: 25, fmt: 'v', fps: 30, lang: 'Turkish', aud: '5–10 yaş arası çocuklar', sb: 'auto', beats: '', vo: 'none', sfx: true, music: false, notes: '' };
+  const DEF = { style: D.styles[0].id, topic: '', dur: 25, fmt: 'v', fps: 30, lang: 'Turkish', aud: '5–10 yaş arası çocuklar', sb: 'auto', beats: '', vo: 'none', sfx: true, music: false, notes: '',
+    chan: '', kick: '', outro: '', meta: false, thumb: false, srt: false, series: '' };
   let st = { ...DEF, ...store.get('kaleydo.builder', {}) };
+  const shared = new URLSearchParams(location.search).get('p');
+  if (shared) { try { st = { ...DEF, ...JSON.parse(new TextDecoder().decode(Uint8Array.from(atob(shared.replace(/-/g, '+').replace(/_/g, '/')), c => c.charCodeAt(0)))) }; } catch { /* broken link: keep saved state */ } }
   if (!D.styles.some(s => s.id === st.style)) st.style = DEF.style;
   const fStyle = $('#fStyle');
   for (const c of D.categories) fStyle.append(h('optgroup', { label: c.name }, D.styles.filter(s => s.category === c.id).map(s => h('option', { value: s.id, text: `${s.id} · ${s.name}` }))));
@@ -117,6 +142,9 @@
   const bind = (sel, key, prop = 'value', conv = v => v) => $(sel).addEventListener('input', e => { st[key] = conv(e.target[prop]); sync(false); });
   bind('#fStyle', 'style'); bind('#fTopic', 'topic'); bind('#fFps', 'fps', 'value', Number); bind('#fLang', 'lang'); bind('#fAud', 'aud'); bind('#fBeats', 'beats'); bind('#fNotes', 'notes');
   bind('#fSfx', 'sfx', 'checked'); bind('#fMusic', 'music', 'checked');
+  bind('#fChan', 'chan'); bind('#fKick', 'kick'); bind('#fOutro', 'outro'); bind('#fSeries', 'series');
+  bind('#fMeta', 'meta', 'checked'); bind('#fThumb', 'thumb', 'checked'); bind('#fSrt', 'srt', 'checked');
+  $('#fTopic').addEventListener('input', () => renderSuggest());
   $('#fStyle').addEventListener('change', () => sync());
   $('#fDurN').addEventListener('input', e => { const v = Math.round(Number(e.target.value)); if (v >= 5 && v <= 180) { st.dur = v; sync(false); } });
 
@@ -124,6 +152,9 @@
     if (full) {
       fStyle.value = st.style; $('#fTopic').value = st.topic; $('#fFps').value = String(st.fps); $('#fLang').value = st.lang; $('#fAud').value = st.aud;
       $('#fBeats').value = st.beats; $('#fNotes').value = st.notes; $('#fSfx').checked = st.sfx; $('#fMusic').checked = st.music;
+      $('#fChan').value = st.chan; $('#fKick').value = st.kick; $('#fOutro').value = st.outro; $('#fSeries').value = st.series;
+      $('#fMeta').checked = st.meta; $('#fThumb').checked = st.thumb; $('#fSrt').checked = st.srt;
+      renderSuggest();
       if (document.activeElement !== $('#fDurN')) $('#fDurN').value = st.dur;
       const s = D.styles.find(x => x.id === st.style);
       $('#fTopic').placeholder = `ör. ${s.examples[0]}`;
@@ -134,11 +165,15 @@
     const s = D.styles.find(x => x.id === st.style), text = buildPrompt(st);
     $('#out').value = text;
     $('#outTitle').textContent = `Prompt · ${s.id} ${s.name} · ${st.dur} sn`;
-    $('#outCount').textContent = `${text.split(/\s+/).filter(Boolean).length.toLocaleString('tr')} kelime`;
+    const eps = seriesTopics();
+    $('#outCount').textContent = `${text.split(/\s+/).filter(Boolean).length.toLocaleString('tr')} kelime${eps.length > 1 ? ` · seri: ${eps.length} bölüm` : ''}`;
+    $('#bSeries').hidden = eps.length < 2;
+    if (eps.length > 1) $('#bSeries').textContent = `Seriyi indir (${eps.length} bölüm)`;
     store.set('kaleydo.builder', st);
   }
 
-  function buildPrompt(o) {
+  const seriesTopics = () => st.series.split('\n').map(x => x.trim()).filter(Boolean);
+  function buildPrompt(o, ep = null) {
     const s = D.styles.find(x => x.id === o.style);
     const [fmt, W, H] = { v: ['vertical 9:16 (YouTube Shorts, Reels, TikTok)', 1080, 1920], h: ['horizontal 16:9 (YouTube)', 1920, 1080], s: ['square 1:1', 1080, 1080] }[o.fmt];
     const safe = {
@@ -146,7 +181,7 @@
       h: 'keep 5 % margins on all sides and leave the bottom 12 % free for subtitles.',
       s: 'keep 6 % margins on all sides.',
     }[o.fmt];
-    const topic = o.topic.trim() || s.preview.topic;
+    const topic = (ep ? ep.topic : o.topic.trim()) || s.preview.topic;
     const beats = o.beats.split('\n').map(x => x.trim()).filter(Boolean);
     const storyboard = o.sb === 'own' && beats.length
       ? `Use these beats in this order and fit them into the time:\n\n${beats.map((b, i) => `${i + 1}. ${b}`).join('\n')}`
@@ -162,10 +197,72 @@
       FORMAT: fmt, WIDTH: W, HEIGHT: H, FPS: o.fps, OUTPUT: 'out/final.mp4', STORYBOARD: storyboard, STYLE_GUIDE: guide, SAFE_ZONE: safe, VOICEOVER: vo,
       SFX: o.sfx ? "yes — give every visual event a matching, gentle effect made from the style's material." : 'none.',
       MUSIC: o.music ? 'a soft, synthesized background loop (simple chords and a light melody, no drums), about 18 dB under the effects; it must loop cleanly.' : 'none.',
-      EXTRA: o.notes.trim() ? `## 8. Extra notes\n\n${o.notes.trim()}` : '',
+      EXTRA: extras(o, ep, topic),
     };
     return D.body.replace(/\{\{(\w+)\}\}/g, (m, k) => (k in map ? String(map[k]) : m)).replace(/\n{3,}/g, '\n\n').trim() + '\n';
   }
+
+  function extras(o, ep, topic) {
+    const out = [];
+    const chan = o.chan.trim(), kick = o.kick.trim(), outro = o.outro.trim();
+    if (chan || kick || outro || ep) {
+      const L = [];
+      if (ep) L.push(`- This is episode ${ep.n} of ${ep.of} in a series${chan ? ` for the channel "${chan}"` : ''}. Every episode uses the same style, layout, title position, caption size and timing, so the series looks like one family. Other episodes: ${ep.all.filter(x => x !== topic).map(x => `"${x}"`).join(', ')}.`);
+      else if (chan) L.push(`- The video belongs to the channel "${chan}"; keep its identity identical in every future episode.`);
+      if (kick) L.push(`- Show the series line "${kick}" small above the title for the first 2 seconds, in the style's accent colour.`);
+      if (outro) L.push(`- End with a 1.5-second end card that says "${outro}"${chan ? ` and the channel name "${chan}"` : ''}, built in the style (not a generic template). The signature transition leads into it.`);
+      out.push(`Series identity\n\n${L.join('\n')}`);
+    }
+    if (o.meta || o.thumb || o.srt) {
+      const L = [];
+      if (o.meta) L.push(`- Write \`out/youtube.md\` in ${o.lang}: a title of at most 60 characters (a question or a surprising true fact, no clickbait, no all-caps), a 2–3 sentence description that repeats the key fact, and 5–8 relevant hashtags. Content is for children: no calls to comment, no external links.`);
+      if (o.thumb) L.push(`- Make \`out/thumbnail.jpg\` (1280×720, under 2 MB): the most striking frame re-composed for 16:9 in the same style, with 2–4 large words of the title, high contrast, nothing important in the bottom-right corner (the timestamp covers it).`);
+      if (o.srt) L.push(`- Export the on-screen text as subtitles: \`out/captions.srt\` with the exact times each caption is visible.`);
+      out.push(`Publishing pack\n\n${L.join('\n')}`);
+    }
+    if (o.notes.trim()) out.push(`Extra notes\n\n${o.notes.trim()}`);
+    return out.map((x, i) => `## ${8 + i}. ${x}`).join('\n\n');
+  }
+
+  // ---- style suggestions for the typed topic -------------------------------------------------------------------
+  const TOPICS = window.KALEYDO_KONULAR || [];
+  const stems = t => lower(t).replace(/[^a-zçğıöşü0-9 ]/g, ' ').split(/\s+/).filter(w => w.length >= 4).map(w => w.slice(0, 5));
+  const STOP = new Set(['nasıl', 'neden', 'nered', 'kadar', 'neler', 'yapar', 'olur', 'oluşu', 'bu ka']);
+  const styleText = D.styles.map(s => stems([s.name, s.tagline, s.bestFor, ...s.examples, ...s.signature].join(' ')));
+  function suggestStyles(topic) {
+    const q = stems(topic).filter(w => !STOP.has(w));
+    if (!q.length) return [];
+    const score = Object.fromEntries(D.styles.map(s => [s.id, 0]));
+    D.styles.forEach((s, i) => { for (const w of q) if (styleText[i].includes(w)) score[s.id] += 1; });
+    for (const g of TOPICS) for (const [t, ids] of g.topics) { const ts = stems(t); const hit = q.filter(w => ts.includes(w)).length; if (hit) ids.forEach((id, k) => (score[id] += hit * (k ? 2 : 3))); }
+    return Object.entries(score).filter(([, v]) => v > 0).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([id]) => id);
+  }
+  function renderSuggest() {
+    const ids = suggestStyles(st.topic);
+    const box = $('#fSuggest');
+    if (!ids.length) { box.replaceChildren(); return; }
+    box.replaceChildren(h('span', { class: 'muted small', text: 'Bu konuya yakışan stiller:' }), ...ids.map(id => {
+      const s = D.styles.find(x => x.id === id);
+      return h('button', { type: 'button', class: id === st.style ? 'on' : null, onclick: () => { st.style = id; sync(); } }, h('img', { src: s.poster, alt: '', loading: 'lazy' }), `${s.id} · ${s.name}`);
+    }));
+  }
+
+  // ---- topic ideas ----------------------------------------------------------------------------------------------
+  let tGroup = 'all';
+  const tChips = $('#tChips'), topicsBox = $('#topics');
+  [{ id: 'all', name: 'Tümü' }, ...TOPICS].forEach(g => tChips.append(h('button', { class: 'chip', type: 'button', role: 'tab', 'data-g': g.id, 'aria-selected': String(g.id === 'all'), onclick: () => { tGroup = g.id; renderTopics(); } }, g.name, h('span', { class: 'n', text: g.id === 'all' ? TOPICS.reduce((n, x) => n + x.topics.length, 0) : g.topics.length }))));
+  function renderTopics() {
+    tChips.querySelectorAll('.chip').forEach(b => b.setAttribute('aria-selected', String(b.dataset.g === tGroup)));
+    topicsBox.replaceChildren(...TOPICS.filter(g => tGroup === 'all' || g.id === tGroup).flatMap(g => g.topics.map(([t, ids]) => h('div', { class: 'topic' },
+      h('button', { class: 'topic-q', type: 'button', onclick: () => useStyle(ids[0], t) }, h('span', { class: 'muted small', text: g.name }), h('b', { text: t })),
+      h('div', { class: 'topic-styles' }, ids.map(id => { const s = D.styles.find(x => x.id === id); return h('button', { type: 'button', title: `${s.name} ile prompt oluştur`, onclick: () => useStyle(id, t) }, h('img', { src: s.poster, alt: '', loading: 'lazy' }), h('span', { text: `${s.id} · ${s.name}` })); }))))));
+  }
+  $('#tDice').addEventListener('click', () => {
+    const all = TOPICS.flatMap(g => g.topics), [t, ids] = all[Math.floor(Math.random() * all.length)];
+    useStyle(ids[Math.floor(Math.random() * ids.length)], t);
+    toast(`Rastgele konu: ${t}`);
+  });
+  renderTopics();
 
   function useStyle(id, topic) {
     st.style = id;
@@ -192,6 +289,19 @@
     toast('İndirildi');
   });
   $('#bReset').addEventListener('click', () => { st = { ...DEF }; sync(); toast('Sıfırlandı'); });
+  $('#bSeries').addEventListener('click', () => {
+    const eps = seriesTopics(), s = D.styles.find(x => x.id === st.style);
+    const text = eps.map((t, i) => `<!-- ===== Bölüm ${i + 1} / ${eps.length} ===== -->\n\n${buildPrompt(st, { topic: t, n: i + 1, of: eps.length, all: eps })}`).join('\n\n---\n\n');
+    const a = h('a', { href: URL.createObjectURL(new Blob([text], { type: 'text/markdown;charset=utf-8' })), download: `kaleydo-seri-${s.id}-${slugify(st.chan || s.name)}-${eps.length}-bolum.md` });
+    document.body.append(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500);
+    toast(`${eps.length} bölümlük seri indirildi`);
+  });
+  $('#bLink').addEventListener('click', () => {
+    const bytes = new TextEncoder().encode(JSON.stringify(st));
+    const b64 = btoa(String.fromCharCode(...bytes)).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+    copy(`${location.origin}${location.pathname}?p=${b64}#olustur`);
+    toast('Bağlantı kopyalandı: aynı ayarlarla açılır');
+  });
 
   sync();
   applyFilter();

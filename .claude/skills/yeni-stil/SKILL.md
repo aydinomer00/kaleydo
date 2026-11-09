@@ -1,6 +1,6 @@
 ---
 name: yeni-stil
-description: Kaleydo'ye yeni bir görsel stil ekler (önizleme kodu, meta.json, style.md, 8 sn önizleme videosu, site verisi). Bir görselden (poster, ekran görüntüsü, çizim) ya da tarif edilen bir görünümden çalışır. "Bu görselden yeni stil çıkar", "26. stil olarak ekle", "suluboya gibi ama kolaj olsun, yeni stil yap", "add a new style from this image" gibi isteklerde kullan.
+description: Kaleydo'ya yeni bir görsel stil ekler (önizleme kodu, meta.json, style.md, 8 sn önizleme videosu, site verisi). Bir görselden (poster, ekran görüntüsü, çizim) ya da tarif edilen bir görünümden çalışır. "Bu görselden yeni stil çıkar", "26. stil olarak ekle", "suluboya gibi ama kolaj olsun, yeni stil yap", "add a new style from this image" gibi isteklerde kullan.
 ---
 
 # Yeni stil eklemek

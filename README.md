@@ -16,8 +16,13 @@
 ## Neler var?
 
 - **25 görsel stil, 4 kategori.** Her stilin 8 saniyelik döngü önizlemesi, Canvas ile yazılmış kaynak kodu, künyesi (palet, yazı tipleri, imza öğeleri) ve yapay zekânın stili yeniden kurabileceği kadar ayrıntılı bir **stil rehberi** var.
-- **Galeri sitesi.** Kategoriye göre süz, ara, büyük önizlemeyi ya da tarayıcıda canlı çizimi izle, paletteki renkleri tek dokunuşla kopyala.
+- **Galeri sitesi.** Kategoriye göre süz, ara, favorilerini işaretle, büyük önizlemeyi ya da tarayıcıda canlı çizimi izle, paletteki renkleri tek dokunuşla kopyala. Açık / koyu tema.
+- **Konu fikirleri.** 7 grupta 46 çocuk dostu doğa sorusu, her birine yakışan stillerle; "Rastgele konu" düğmesi. Kendi yazdığın konuya da uygun stiller önerilir.
 - **Prompt oluşturucu.** Stil + konu + süre + format + ses seçimlerinden, kod yazabilen bir yapay zekâ asistanına verilecek eksiksiz üretim talimatı hazırlar: bilgi doğruluğu, hikâye akışı, stil kuralları, kodlama yöntemi, ses ve son kontroller tek metinde.
+  - **Kanal kimliği:** kanal adı, açılış satırı ve kapanış kartı her bölümde aynı kalır.
+  - **Yayın paketi:** YouTube başlığı, açıklama ve etiketler; 1280×720 kapak görseli; `.srt` altyazı.
+  - **Seri modu:** her satıra bir konu yaz, tüm bölümlerin promptlarını tek dosyada indir.
+  - **Paylaşılabilir bağlantı:** aynı ayarlarla açılan bir adres kopyalar.
 - **Üretim araçları.** Kare kare deterministik çizim motoru, tarayıcıdan videoya aktarıcı, kodla ses efekti ve fon müziği üreten karıştırıcı.
 - **Asistan becerileri.** `.claude/skills/` altında `video` (tek cümleyle video) ve `yeni-stil` (bir görselden yeni stil); bu klasörü tanıyan kodlama asistanları bunları doğrudan kullanır.
 - **Örnek proje.** "Arılar nasıl bal yapar?" videosunun (25 sn, 9:16) tüm kaynağı: [`examples/arilar-bal`](examples/arilar-bal).
@@ -104,7 +109,7 @@ npx playwright install chromium
 
 ```
 ├── index.html                 galeri + prompt oluşturucu (GitHub Pages ana sayfası)
-├── site/                      sitenin stili, kodu, üretilen veri (data.js) ve kapak görseli
+├── site/                      sitenin stili, kodu, üretilen veri (data.js), konu bankası (konular.js) ve kapak görseli
 ├── styles/
 │   ├── preview.html           canlı önizleme sayfası (?s=<klasör>&play)
 │   └── NN-ad/

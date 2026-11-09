@@ -168,3 +168,33 @@ dialog::backdrop { background: rgba(15,12,10,.6); backdrop-filter: blur(3px); }
   .frame { width: min(100%, 300px); }
   .dlg-info { overflow: visible; }
 }
+
+/* theme switch */
+.theme { width: 38px; height: 38px; border-radius: 12px; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); font: 600 18px/1 var(--text); cursor: pointer; display: inline-grid; place-items: center; }
+.top nav { align-items: center; }
+@media (max-width: 640px) { .top nav a[href="#konular"] { display: none; } }
+
+/* favourites */
+.cell { position: relative; display: flex; }
+.cell > .card { flex: 1; width: 100%; }
+.fav { position: absolute; right: 10px; top: 10px; z-index: 2; width: 36px; height: 36px; border-radius: 50%; border: 0; background: rgba(20,18,15,.6); color: #fff; font: 600 17px/1 var(--text); cursor: pointer; display: grid; place-items: center; opacity: .85; }
+.fav:hover { opacity: 1; }
+.fav[aria-pressed="true"] { background: var(--accent); opacity: 1; }
+
+/* topic ideas */
+.topics { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.topic { display: flex; flex-direction: column; gap: 10px; padding: 14px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); }
+.topic-q { display: flex; flex-direction: column; gap: 4px; text-align: left; background: none; border: 0; padding: 0; color: var(--ink); cursor: pointer; font: inherit; }
+.topic-q b { font: 700 18px/1.25 var(--display); letter-spacing: -.01em; }
+.topic-q:hover b { color: var(--accent); }
+.topic-styles { display: flex; flex-wrap: wrap; gap: 6px; }
+.topic-styles button, .suggest button { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 4px 10px 4px 4px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface2); color: var(--ink); font: 500 13px var(--text); cursor: pointer; }
+.topic-styles button:hover, .suggest button:hover { border-color: var(--ink); }
+.topic-styles img, .suggest img { width: 20px; height: 34px; object-fit: cover; border-radius: 4px; }
+
+/* builder additions */
+.suggest { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: -6px 0 16px; }
+.suggest:empty { display: none; }
+.suggest button.on { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.field > input + .row2, .row2.gap { margin-top: 8px; }
+.toggles3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; }
