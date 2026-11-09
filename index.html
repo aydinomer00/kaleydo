@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kaleydo · Çocuklar için doğa videolarına 25 görsel stil</title>
+<meta name="description" content="Çocuklara doğayı sevdiren kısa animasyon videoları için 25 hazır görsel stil, canlı önizlemeler ve tek tıkla eksiksiz video promptu.">
+<meta property="og:title" content="Kaleydo · 25 görsel stil">
+<meta property="og:description" content="Bir stil seç, konunu yaz, eksiksiz video promptunu al.">
+<meta property="og:image" content="site/kapak.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 16L16 1L29 8.5Z' fill='%23E2552C'/%3E%3Cpath d='M16 16L29 8.5L29 23.5Z' fill='%23F2B33D'/%3E%3Cpath d='M16 16L29 23.5L16 31Z' fill='%232C6E63'/%3E%3Cpath d='M16 16L16 31L3 23.5Z' fill='%233B5BA9'/%3E%3Cpath d='M16 16L3 23.5L3 8.5Z' fill='%238A4FB8'/%3E%3Cpath d='M16 16L3 8.5L16 1Z' fill='%23E2416E'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="engine/fonts.css">
+<link rel="stylesheet" href="site/app.css">
+</head>
+<body>
+<a class="skip" href="#stiller">İçeriğe geç</a>
+
+<header class="top">
+  <a class="brand" href="#" aria-label="Kaleydo ana sayfa">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 16L16 1L29 8.5Z" fill="#E2552C"/><path d="M16 16L29 8.5L29 23.5Z" fill="#F2B33D"/><path d="M16 16L29 23.5L16 31Z" fill="#2C6E63"/><path d="M16 16L16 31L3 23.5Z" fill="#3B5BA9"/><path d="M16 16L3 23.5L3 8.5Z" fill="#8A4FB8"/><path d="M16 16L3 8.5L16 1Z" fill="#E2416E"/></svg>
+    <span>Kaleydo</span>
+  </a>
+  <nav aria-label="Bölümler">
+    <a href="#stiller">Stiller</a>
+    <a href="#olustur">Prompt oluştur</a>
+    <a href="#nasil">Nasıl çalışır</a>
+    <a class="gh" id="repoLink" href="https://github.com/aydinomer00/kaleydo">Kaynak kod</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">Bir konu, yirmi beş bakış · tamamen kodla çizildi</p>
+      <h1>Çocuklara doğayı sevdiren videolar için <em>25 görsel stil</em></h1>
+      <p class="lead">Bir stil seç, konunu yaz; Kaleydo sana yapay zekâya verebileceğin eksiksiz bir video promptu hazırlasın. Her stilin canlı önizlemesi, renk paleti, yazı tipleri ve ayrıntılı rehberi burada.</p>
+      <div class="cta">
+        <a class="btn primary" href="#stiller">Stilleri keşfet</a>
+        <a class="btn" href="#olustur">Prompt oluştur</a>
+      </div>
+      <dl class="stats">
+        <div><dt>Stil</dt><dd id="statStyles">25</dd></div>
+        <div><dt>Kategori</dt><dd>4</dd></div>
+        <div><dt>Önizleme</dt><dd>8 sn döngü</dd></div>
+      </dl>
+    </div>
+    <div class="hero-phones" aria-hidden="true">
+      <video class="phone p1" muted loop playsinline autoplay preload="metadata" poster="previews/17-doga-defteri.jpg" src="previews/17-doga-defteri.mp4"></video>
+      <video class="phone p2" muted loop playsinline autoplay preload="metadata" poster="previews/23-vitray-isigi.jpg" src="previews/23-vitray-isigi.mp4"></video>
+      <video class="phone p3" muted loop playsinline autoplay preload="metadata" poster="previews/03-hamur-dunyasi.jpg" src="previews/03-hamur-dunyasi.mp4"></video>
+    </div>
+  </section>
+
+  <section id="stiller" class="block">
+    <div class="block-head">
+      <h2>Stiller</h2>
+      <p>Bir karta dokun: büyük önizleme, palet, yazı tipleri ve örnek konular açılır.</p>
+    </div>
+    <div class="toolbar">
+      <div class="chips" id="chips" role="tablist" aria-label="Kategoriler"></div>
+      <label class="search"><span class="sr">Ara</span><input id="q" type="search" placeholder="Stil ya da konu ara…" autocomplete="off"></label>
+    </div>
+    <div class="grid" id="grid"></div>
+    <p class="empty" id="empty" hidden>Aramana uyan stil bulunamadı.</p>
+  </section>
+
+  <section id="olustur" class="block builder">
+    <div class="block-head">
+      <h2>Prompt oluştur</h2>
+      <p>Seçimlerini yap; sağdaki metin anında güncellenir. Kopyalayıp kod yazabilen bir yapay zekâ asistanına yapıştır.</p>
+    </div>
+    <div class="builder-grid">
+      <form id="form" class="panel" autocomplete="off">
+        <label class="field"><span>Stil</span><select id="fStyle"></select></label>
+        <label class="field"><span>Konu</span><input id="fTopic" type="text" placeholder="ör. Arılar nasıl bal yapar?"></label>
+        <div class="examples" id="fExamples" aria-label="Örnek konular"></div>
+        <fieldset class="field"><legend>Süre</legend>
+          <div class="seg" id="fDur">
+            <button type="button" data-v="15">15 sn</button><button type="button" data-v="25">25 sn</button><button type="button" data-v="30">30 sn</button><button type="button" data-v="45">45 sn</button><button type="button" data-v="60">60 sn</button>
+          </div>
+          <label class="inline"><span>Özel:</span><input id="fDurN" type="number" min="5" max="180" step="1" value="25"> sn</label>
+        </fieldset>
+        <fieldset class="field"><legend>Format</legend>
+          <div class="seg" id="fFmt"><button type="button" data-v="v">Dikey 9:16</button><button type="button" data-v="h">Yatay 16:9</button><button type="button" data-v="s">Kare 1:1</button></div>
+        </fieldset>
+        <div class="row2">
+          <label class="field"><span>Kare hızı</span><select id="fFps"><option value="30">30 fps</option><option value="60">60 fps</option></select></label>
+          <label class="field"><span>Dil</span><select id="fLang"><option value="Turkish">Türkçe</option><option value="English">English</option></select></label>
+        </div>
+        <label class="field"><span>Hedef kitle</span><input id="fAud" type="text" value="5–10 yaş arası çocuklar"></label>
+        <fieldset class="field"><legend>Hikâye akışı</legend>
+          <div class="seg" id="fSb"><button type="button" data-v="auto">Yapay zekâ planlasın</button><button type="button" data-v="own">Kendi sahnelerim</button></div>
+          <textarea id="fBeats" rows="4" placeholder="Her satıra bir sahne yaz:&#10;Arı çiçeğe konar&#10;Nektarı emer…" hidden></textarea>
+        </fieldset>
+        <fieldset class="field"><legend>Seslendirme</legend>
+          <div class="seg" id="fVo"><button type="button" data-v="none">Yok</button><button type="button" data-v="script">Sadece metin</button><button type="button" data-v="tts">Seslendir</button></div>
+        </fieldset>
+        <div class="row2 toggles">
+          <label class="toggle"><input id="fSfx" type="checkbox" checked><span>Ses efektleri</span></label>
+          <label class="toggle"><input id="fMusic" type="checkbox"><span>Fon müziği</span></label>
+        </div>
+        <label class="field"><span>Ek notlar</span><textarea id="fNotes" rows="3" placeholder="ör. Kanal logosu sağ üstte dursun, sonda ‘Takip et!’ yazsın."></textarea></label>
+      </form>
+      <div class="panel out">
+        <div class="out-head">
+          <strong id="outTitle">Prompt</strong>
+          <span id="outCount" class="muted"></span>
+        </div>
+        <textarea id="out" readonly spellcheck="false" aria-label="Oluşturulan prompt"></textarea>
+        <div class="out-actions">
+          <button class="btn primary" id="bCopy" type="button">Kopyala</button>
+          <button class="btn" id="bDl" type="button">İndir (.md)</button>
+          <button class="btn ghost" id="bReset" type="button">Sıfırla</button>
+          <span class="toast" id="toast" role="status" aria-live="polite"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="nasil" class="block how">
+    <div class="block-head"><h2>Nasıl çalışır?</h2></div>
+    <ol class="steps">
+      <li><b>Stil seç.</b> Her stil; renkleri, malzemesi, yazı tipi, hareketleri ve geçişiyle ayrıntılı bir rehbere sahip.</li>
+      <li><b>Konunu yaz.</b> Süreyi, formatı ve sesi seç. Prompt, ortak bir üretim gövdesi ile stil rehberini birleştirir.</li>
+      <li><b>Yapıştır, izle.</b> Kod yazabilen bir yapay zekâ önce hikâye akışını, sonra kodu, sesi ve kontrolleri yapar; sonunda <code>out/final.mp4</code> hazır olur.</li>
+    </ol>
+    <div class="how-more">
+      <div class="panel">
+        <h3>Depoda neler var?</h3>
+        <ul>
+          <li><code>styles/</code> · her stilin önizleme kodu, künyesi ve İngilizce rehberi</li>
+          <li><code>prompts/govde.md</code> · tüm stillerin paylaştığı üretim talimatları</li>
+          <li><code>engine/</code> · ortak çizim araçları ve önizleme düzeneği</li>
+          <li><code>tools/</code> · video çıkarma ve site verisini üretme betikleri</li>
+          <li><code>.claude/skills/</code> · tek cümleyle video ve yeni stil üretmek için beceriler</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Kendi stilini ekle</h3>
+        <p>Yeni bir klasör aç (<code>styles/26-adi/</code>), <code>preview.js</code>, <code>meta.json</code> ve <code>style.md</code> dosyalarını ekle, sonra:</p>
+        <pre><code>node tools/render.cjs 26-adi
+node tools/build-site.cjs</code></pre>
+        <p>Bir kodlama asistanı kullanıyorsan <code>yeni-stil</code> becerisi bu adımları bir görselden başlayarak yapar.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <p><b>Kaleydo</b> · Önizlemelerin tamamı Canvas ile kodla üretildi; görsel ya da ses kütüphanesi kullanılmadı. Yazı tipleri SIL Open Font License ile dağıtılır.</p>
+</footer>
+
+<dialog id="dlg" aria-labelledby="dName">
+  <div class="dlg">
+    <div class="dlg-media">
+      <div class="tabs" role="tablist">
+        <button type="button" class="on" data-m="video" role="tab">Video</button>
+        <button type="button" data-m="live" role="tab">Canlı önizleme</button>
+      </div>
+      <div class="frame" id="dFrame"></div>
+    </div>
+    <div class="dlg-info">
+      <div class="dlg-top">
+        <span class="badge" id="dCat"></span>
+        <div class="dlg-nav">
+          <button type="button" class="icon" id="dPrev" aria-label="Önceki stil">‹</button>
+          <button type="button" class="icon" id="dNext" aria-label="Sonraki stil">›</button>
+          <button type="button" class="icon" id="dClose" aria-label="Kapat">×</button>
+        </div>
+      </div>
+      <h3 id="dName"></h3>
+      <p class="muted" id="dEn"></p>
+      <p class="tagline" id="dTag"></p>
+      <h4>En uygun konular</h4>
+      <p id="dBest"></p>
+      <h4>Örnek konular</h4>
+      <div class="examples" id="dEx"></div>
+      <h4>Renk paleti <span class="muted small">(kopyalamak için dokun)</span></h4>
+      <div class="swatches" id="dPal"></div>
+      <h4>Yazı tipleri</h4>
+      <p id="dFonts"></p>
+      <h4>İmza öğeleri</h4>
+      <ul id="dSig"></ul>
+      <details class="guide"><summary>Stil rehberi (İngilizce, prompta eklenen metin)</summary><pre id="dGuide"></pre></details>
+      <div class="dlg-actions">
+        <button class="btn primary" id="dUse" type="button">Bu stille prompt oluştur</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script src="site/data.js"></script>
+<script src="site/app.js"></script>
+</body>
+</html>
