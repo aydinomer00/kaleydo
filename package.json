@@ -1,0 +1,17 @@
+{
+  "name": "kaleydo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Çocuklar için doğa videolarına 25 görsel stil: canlı önizlemeler, stil rehberleri, prompt oluşturucu ve video üretim araçları.",
+  "scripts": {
+    "sunucu": "python3 -m http.server 8000",
+    "onizleme": "node tools/render.cjs",
+    "site": "node tools/build-site.cjs --kapak"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
