@@ -259,7 +259,7 @@ def loudness(st):
     return float(-0.691 + 10 * np.log10(np.mean(z[keep])))
 
 
-def soft_limit(x, knee=0.8, ceil=0.89):
+def soft_limit(x, knee=0.75, ceil=0.84):
     a = np.abs(x)
     over = a > knee
     y = x.copy()

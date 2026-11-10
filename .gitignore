@@ -4,3 +4,4 @@ node_modules/
 *.log
 videos/*/frames/
 __pycache__/
+videos/*/ses.wav

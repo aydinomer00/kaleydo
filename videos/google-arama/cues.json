@@ -1,0 +1,510 @@
+{
+ "duration": 30,
+ "music": "yok",
+ "cues": [
+  {
+   "t": 0.15,
+   "s": "paper",
+   "gain": -12,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 0.3,
+   "s": "paper",
+   "gain": -8,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 1.0,
+   "s": "paper",
+   "gain": -8,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 1.55,
+   "s": "swish",
+   "gain": -14,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 2.2,
+   "s": "paper",
+   "gain": -8,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 2.5,
+   "s": "chalk",
+   "gain": -16,
+   "pitch": 1.0,
+   "pan": -0.3
+  },
+  {
+   "t": 2.6,
+   "s": "chalk",
+   "gain": -16,
+   "pitch": 1.05,
+   "pan": -0.18
+  },
+  {
+   "t": 2.7,
+   "s": "chalk",
+   "gain": -16,
+   "pitch": 1.1,
+   "pan": -0.06
+  },
+  {
+   "t": 2.8,
+   "s": "chalk",
+   "gain": -16,
+   "pitch": 1.15,
+   "pan": 0.06
+  },
+  {
+   "t": 2.9,
+   "s": "chalk",
+   "gain": -16,
+   "pitch": 1.2,
+   "pan": 0.18
+  },
+  {
+   "t": 3.0,
+   "s": "chalk",
+   "gain": -16,
+   "pitch": 1.25,
+   "pan": 0.3
+  },
+  {
+   "t": 3.1,
+   "s": "chalk",
+   "gain": -15,
+   "pitch": 0.9,
+   "pan": 0
+  },
+  {
+   "t": 3.85,
+   "s": "pop",
+   "gain": -10,
+   "pitch": 0.9,
+   "pan": 0
+  },
+  {
+   "t": 4.0,
+   "s": "pop",
+   "gain": -8,
+   "pitch": 1.15,
+   "pan": 0
+  },
+  {
+   "t": 4.1,
+   "s": "click",
+   "gain": -20,
+   "pitch": 1.3,
+   "pan": 0.2
+  },
+  {
+   "t": 4.35,
+   "s": "click",
+   "gain": -20,
+   "pitch": 1.3,
+   "pan": 0.2
+  },
+  {
+   "t": 4.6,
+   "s": "click",
+   "gain": -20,
+   "pitch": 1.3,
+   "pan": 0.2
+  },
+  {
+   "t": 4.65,
+   "s": "pop",
+   "gain": -8,
+   "pitch": 1.2,
+   "pan": 0
+  },
+  {
+   "t": 4.85,
+   "s": "click",
+   "gain": -20,
+   "pitch": 1.3,
+   "pan": 0.2
+  },
+  {
+   "t": 5.0,
+   "s": "paper",
+   "gain": -10,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 5.1,
+   "s": "click",
+   "gain": -20,
+   "pitch": 1.3,
+   "pan": 0.2
+  },
+  {
+   "t": 5.3,
+   "s": "pop",
+   "gain": -8,
+   "pitch": 1.25,
+   "pan": 0
+  },
+  {
+   "t": 5.35,
+   "s": "click",
+   "gain": -20,
+   "pitch": 1.3,
+   "pan": 0.2
+  },
+  {
+   "t": 5.5,
+   "s": "paper",
+   "gain": -10,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 5.6,
+   "s": "click",
+   "gain": -20,
+   "pitch": 1.3,
+   "pan": 0.2
+  },
+  {
+   "t": 5.85,
+   "s": "click",
+   "gain": -20,
+   "pitch": 1.3,
+   "pan": 0.2
+  },
+  {
+   "t": 5.95,
+   "s": "pop",
+   "gain": -8,
+   "pitch": 1.2999999999999998,
+   "pan": 0
+  },
+  {
+   "t": 6.1,
+   "s": "click",
+   "gain": -20,
+   "pitch": 1.3,
+   "pan": 0.2
+  },
+  {
+   "t": 6.35,
+   "s": "click",
+   "gain": -20,
+   "pitch": 1.3,
+   "pan": 0.2
+  },
+  {
+   "t": 6.6,
+   "s": "pop",
+   "gain": -8,
+   "pitch": 1.3499999999999999,
+   "pan": 0
+  },
+  {
+   "t": 7.0,
+   "s": "paper",
+   "gain": -8,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 7.32,
+   "s": "tap",
+   "gain": -4,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 7.64,
+   "s": "click",
+   "gain": -8,
+   "pitch": 0.8,
+   "pan": 0
+  },
+  {
+   "t": 7.72,
+   "s": "click",
+   "gain": -8,
+   "pitch": 0.9,
+   "pan": 0
+  },
+  {
+   "t": 8.1,
+   "s": "paper",
+   "gain": -10,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 8.6,
+   "s": "paper",
+   "gain": -10,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 9.1,
+   "s": "paper",
+   "gain": -10,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 9.9,
+   "s": "paper",
+   "gain": -10,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 10.6,
+   "s": "paper",
+   "gain": -10,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 12.3,
+   "s": "page",
+   "gain": -2,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 13.5,
+   "s": "paper",
+   "gain": -12,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 13.9,
+   "s": "paper",
+   "gain": -8,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 14.3,
+   "s": "chalk",
+   "gain": -13,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 14.95,
+   "s": "paper",
+   "gain": -8,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 15.5,
+   "s": "chalk",
+   "gain": -14,
+   "pitch": 0.9,
+   "pan": 0
+  },
+  {
+   "t": 15.6,
+   "s": "chalk",
+   "gain": -14,
+   "pitch": 1.1,
+   "pan": 0
+  },
+  {
+   "t": 16.0,
+   "s": "ding",
+   "gain": -16,
+   "pitch": 1.6,
+   "pan": 0
+  },
+  {
+   "t": 16.4,
+   "s": "whoosh",
+   "gain": -6,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 17.2,
+   "s": "paper",
+   "gain": -10,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 17.45,
+   "s": "pop",
+   "gain": -8,
+   "pitch": 1.3,
+   "pan": 0
+  },
+  {
+   "t": 18.3,
+   "s": "paper",
+   "gain": -8,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 18.82,
+   "s": "tap",
+   "gain": -6,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 18.94,
+   "s": "tap",
+   "gain": -6,
+   "pitch": 1.1,
+   "pan": 0
+  },
+  {
+   "t": 19.06,
+   "s": "tap",
+   "gain": -6,
+   "pitch": 1.2,
+   "pan": 0
+  },
+  {
+   "t": 19.4,
+   "s": "paper",
+   "gain": -10,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 20.0,
+   "s": "swish",
+   "gain": -4,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 20.9,
+   "s": "ding",
+   "gain": -6,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 22.6,
+   "s": "page",
+   "gain": -2,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 23.7,
+   "s": "paper",
+   "gain": -12,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 23.9,
+   "s": "paper",
+   "gain": -6,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 24.35,
+   "s": "paper",
+   "gain": -6,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 24.95,
+   "s": "paper",
+   "gain": -6,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 25.65,
+   "s": "swish",
+   "gain": -14,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 25.9,
+   "s": "paper",
+   "gain": -8,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 26.3,
+   "s": "sparkle",
+   "gain": -6,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 26.62,
+   "s": "tap",
+   "gain": -2,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 26.92,
+   "s": "click",
+   "gain": -6,
+   "pitch": 0.8,
+   "pan": 0
+  },
+  {
+   "t": 26.97,
+   "s": "click",
+   "gain": -6,
+   "pitch": 0.9,
+   "pan": 0
+  },
+  {
+   "t": 27.05,
+   "s": "paper",
+   "gain": -6,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 27.45,
+   "s": "paper",
+   "gain": -6,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 28.1,
+   "s": "chime",
+   "gain": -4,
+   "pitch": 1.0,
+   "pan": 0
+  },
+  {
+   "t": 28.9,
+   "s": "page",
+   "gain": -2,
+   "pitch": 1.0,
+   "pan": 0
+  }
+ ]
+}
