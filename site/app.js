@@ -17,6 +17,8 @@
   const lower = s => String(s).toLocaleLowerCase('tr');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const CAT = Object.fromEntries(D.categories.map(c => [c.id, c]));
+  const DRAFTS = D.drafts || [];
+  const getStyle = id => D.styles.find(x => x.id === id) || DRAFTS.find(x => x.id === id && x.guide);
   const store = { get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* private mode */ } } };
   const slugify = s => lower(s).replace(/ç/g, 'c').replace(/ğ/g, 'g').replace(/ı/g, 'i').replace(/i̇/g, 'i').replace(/ö/g, 'o').replace(/ş/g, 's').replace(/ü/g, 'u').replace(/â/g, 'a').replace(/î/g, 'i').replace(/û/g, 'u').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 48) || 'video';
   $('#statStyles').textContent = D.styles.length;
@@ -130,9 +132,11 @@
   let st = { ...DEF, ...store.get('kaleydo.builder', {}) };
   const shared = new URLSearchParams(location.search).get('p');
   if (shared) { try { st = { ...DEF, ...JSON.parse(new TextDecoder().decode(Uint8Array.from(atob(shared.replace(/-/g, '+').replace(/_/g, '/')), c => c.charCodeAt(0)))) }; } catch { /* broken link: keep saved state */ } }
-  if (!D.styles.some(s => s.id === st.style)) st.style = DEF.style;
+  if (!getStyle(st.style)) st.style = DEF.style;
   const fStyle = $('#fStyle');
   for (const c of D.categories) fStyle.append(h('optgroup', { label: c.name }, D.styles.filter(s => s.category === c.id).map(s => h('option', { value: s.id, text: `${s.id} · ${s.name}` }))));
+  const guided = DRAFTS.filter(d => d.guide);
+  if (guided.length) fStyle.append(h('optgroup', { label: 'Taslaklar (görsel rehberli)' }, guided.map(d => h('option', { value: d.id, text: `${d.id} · ${d.name} (taslak)` }))));
   const seg = (sel, key, conv = v => v) => {
     const box = $(sel);
     box.querySelectorAll('button').forEach(b => b.addEventListener('click', () => { st[key] = conv(b.dataset.v); sync(); }));
@@ -156,13 +160,13 @@
       $('#fMeta').checked = st.meta; $('#fThumb').checked = st.thumb; $('#fSrt').checked = st.srt;
       renderSuggest();
       if (document.activeElement !== $('#fDurN')) $('#fDurN').value = st.dur;
-      const s = D.styles.find(x => x.id === st.style);
+      const s = getStyle(st.style);
       $('#fTopic').placeholder = `ör. ${s.examples[0]}`;
       $('#fExamples').replaceChildren(...s.examples.map(ex => h('button', { type: 'button', text: ex, onclick: () => { st.topic = ex; sync(); } })));
     }
     segs.forEach(f => f());
     $('#fBeats').hidden = st.sb !== 'own';
-    const s = D.styles.find(x => x.id === st.style), text = buildPrompt(st);
+    const s = getStyle(st.style), text = buildPrompt(st);
     $('#out').value = text;
     $('#outTitle').textContent = `Prompt · ${s.id} ${s.name} · ${st.dur} sn`;
     const eps = seriesTopics();
@@ -174,7 +178,7 @@
 
   const seriesTopics = () => st.series.split('\n').map(x => x.trim()).filter(Boolean);
   function buildPrompt(o, ep = null) {
-    const s = D.styles.find(x => x.id === o.style);
+    const s = getStyle(o.style);
     const [fmt, W, H] = { v: ['vertical 9:16 (YouTube Shorts, Reels, TikTok)', 1080, 1920], h: ['horizontal 16:9 (YouTube)', 1920, 1080], s: ['square 1:1', 1080, 1080] }[o.fmt];
     const safe = {
       v: 'keep every caption and key subject inside x 80–900 px and y 190–1450 px; platform buttons and captions cover the right edge and the bottom fifth.',
@@ -193,7 +197,7 @@
     }[o.vo];
     const guide = s.guide.replace(/^(#{2,3}) /gm, (m, x) => `#${x} `);
     const map = {
-      TOPIC: topic, DURATION: o.dur, AUDIENCE: o.aud.trim() || 'children aged 5–10', LANGUAGE: o.lang, STYLE_ID: s.id, STYLE_NAME: `${s.name} (${s.nameEn})`,
+      TOPIC: topic, DURATION: o.dur, AUDIENCE: o.aud.trim() || 'children aged 5–10', LANGUAGE: o.lang, STYLE_ID: s.id, STYLE_NAME: s.nameEn ? `${s.name} (${s.nameEn})` : s.name,
       FORMAT: fmt, WIDTH: W, HEIGHT: H, FPS: o.fps, OUTPUT: 'out/final.mp4', STORYBOARD: storyboard, STYLE_GUIDE: guide, SAFE_ZONE: safe, VOICEOVER: vo,
       SFX: o.sfx ? "yes — give every visual event a matching, gentle effect made from the style's material." : 'none.',
       MUSIC: o.music ? 'a soft, synthesized background loop (simple chords and a light melody, no drums), about 18 dB under the effects; it must loop cleanly.' : 'none.',
@@ -265,23 +269,12 @@
   renderTopics();
 
   // ---- draft styles (still images only) ---------------------------------------------------------------------------
-  const DRAFTS = [
-    ['26', 'Siyanotip', 'siyanotip', 'Güneşte pozlanan mavi baskı; bitkilerin beyaz gölgeleri'],
-    ['27', 'Termal Kamera', 'termal-kamera', 'Isı renkleriyle görülen hayvanlar, kamera arayüzü'],
-    ['28', 'Röntgen', 'rontgen', 'Işıklı masada parlayan iskelet filmi'],
-    ['29', 'Mikroskop', 'mikroskop', 'Yuvarlak görüş alanında minik canlılar'],
-    ['30', 'Nakış Kasnağı', 'nakis-kasnagi', 'Keten kumaşta kanaviçe işleme'],
-    ['31', 'Çıkartma Albümü', 'cikartma-albumu', 'Beyaz kenarlı, parlak çıkartmalar'],
-    ['32', 'Neon Tabela', 'neon-tabela', 'Tuğla duvarda ışıklı neon tüpler'],
-    ['33', 'Kar Küresi', 'kar-kuresi', 'Cam fanus içinde minyatür kış dünyası'],
-    ['34', 'Eski Harita', 'eski-harita', 'Parşömen harita, pusula gülü, kesik çizgili yol'],
-    ['35', 'Grafiti Duvarı', 'grafiti-duvari', 'Sprey boya, akıntılar, kabarık harfler'],
-    ['36', 'Dedektif Panosu', 'dedektif-panosu', 'Mantar pano, polaroidler, kırmızı ip'],
-    ['37', 'Sabun Köpüğü', 'sabun-kopugu', 'Yanardöner ince zar, ışık oyunları'],
-  ];
-  $('#drafts').append(...DRAFTS.map(([id, name, slug, desc]) => h('a', { class: 'draft', href: `site/taslaklar/${id}-${slug}.jpg`, target: '_blank', rel: 'noopener' },
-    h('img', { src: `site/taslaklar/${id}-${slug}.jpg`, alt: `${name} taslağı`, loading: 'lazy' }),
-    h('span', { class: 'body' }, h('span', { class: 'name', text: `${id} · ${name}` }), h('span', { class: 'tag', text: desc })))));
+  $('#drafts').append(...DRAFTS.map(d => h('div', { class: 'draft' },
+    h('a', { href: d.image, target: '_blank', rel: 'noopener', 'aria-label': `${d.name} taslağını büyüt` }, h('img', { src: d.image, alt: `${d.name} taslağı`, loading: 'lazy' })),
+    h('span', { class: 'body' },
+      h('span', { class: 'name', text: `${d.id} · ${d.name}` }),
+      h('span', { class: 'tag', text: d.desc }),
+      d.guide ? h('button', { class: 'draft-use', type: 'button', onclick: () => useStyle(d.id, d.topic) }, 'Bu taslakla prompt oluştur') : null))));
 
   function useStyle(id, topic) {
     st.style = id;
@@ -302,14 +295,14 @@
   }
   $('#bCopy').addEventListener('click', () => copy($('#out').value));
   $('#bDl').addEventListener('click', () => {
-    const s = D.styles.find(x => x.id === st.style), blob = new Blob([$('#out').value], { type: 'text/markdown;charset=utf-8' });
+    const s = getStyle(st.style), blob = new Blob([$('#out').value], { type: 'text/markdown;charset=utf-8' });
     const a = h('a', { href: URL.createObjectURL(blob), download: `kaleydo-${s.id}-${slugify(st.topic || s.preview.topic)}.md` });
     document.body.append(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500);
     toast('İndirildi');
   });
   $('#bReset').addEventListener('click', () => { st = { ...DEF }; sync(); toast('Sıfırlandı'); });
   $('#bSeries').addEventListener('click', () => {
-    const eps = seriesTopics(), s = D.styles.find(x => x.id === st.style);
+    const eps = seriesTopics(), s = getStyle(st.style);
     const text = eps.map((t, i) => `<!-- ===== Bölüm ${i + 1} / ${eps.length} ===== -->\n\n${buildPrompt(st, { topic: t, n: i + 1, of: eps.length, all: eps })}`).join('\n\n---\n\n');
     const a = h('a', { href: URL.createObjectURL(new Blob([text], { type: 'text/markdown;charset=utf-8' })), download: `kaleydo-seri-${s.id}-${slugify(st.chan || s.name)}-${eps.length}-bolum.md` });
     document.body.append(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500);

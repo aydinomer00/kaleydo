@@ -1,0 +1,18 @@
+[
+  { "id": "26", "slug": "siyanotip", "name": "Siyanotip", "desc": "Güneşte pozlanan mavi baskı; bitkilerin beyaz gölgeleri", "topic": "Eğrelti otu nasıl çoğalır?" },
+  { "id": "27", "slug": "termal-kamera", "name": "Termal Kamera", "desc": "Isı renkleriyle görülen hayvanlar, kamera arayüzü", "topic": "Hayvanlar soğukta nasıl ısınır?" },
+  { "id": "28", "slug": "rontgen", "name": "Röntgen", "desc": "Işıklı masada parlayan iskelet filmi", "topic": "Kuşların kemikleri neden hafif?" },
+  { "id": "29", "slug": "mikroskop", "name": "Mikroskop", "desc": "Yuvarlak görüş alanında minik canlılar", "topic": "Bir su damlasında kimler yaşar?" },
+  { "id": "30", "slug": "nakis-kasnagi", "name": "Nakış Kasnağı", "desc": "Keten kumaşta kanaviçe işleme", "topic": "Kirpi kışı nasıl geçirir?" },
+  { "id": "31", "slug": "cikartma-albumu", "name": "Çıkartma Albümü", "desc": "Beyaz kenarlı, parlak çıkartmalar", "topic": "Kurbağalar neden zıplar?" },
+  { "id": "32", "slug": "neon-tabela", "name": "Neon Tabela", "desc": "Tuğla duvarda ışıklı neon tüpler", "topic": "Balinalar şarkı söyler mi?" },
+  { "id": "33", "slug": "kar-kuresi", "name": "Kar Küresi", "desc": "Cam fanus içinde minyatür kış dünyası", "topic": "Kutup tilkisi kışın neden beyazlar?" },
+  { "id": "34", "slug": "eski-harita", "name": "Eski Harita", "desc": "Parşömen harita, pusula gülü, kesik çizgili yol", "topic": "Göçmen kuşlar yolu nasıl bulur?" },
+  { "id": "35", "slug": "grafiti-duvari", "name": "Grafiti Duvarı", "desc": "Sprey boya, akıntılar, kabarık harfler", "topic": "Arılar neden vızıldar?" },
+  { "id": "36", "slug": "dedektif-panosu", "name": "Dedektif Panosu", "desc": "Mantar pano, polaroidler, kırmızı ip", "topic": "Yaprakları kim yedi?" },
+  { "id": "37", "slug": "sabun-kopugu", "name": "Sabun Köpüğü", "desc": "Yanardöner ince zar, ışık oyunları", "topic": "Köpükler neden gökkuşağı renginde?" },
+  { "id": "38", "slug": "kabarik-nakis", "name": "Kabarık Nakış", "nameEn": "Raised Embroidery", "desc": "Kasnakta saten dikiş, Fransız düğümü ve kabarık iplik dokusu", "topic": "Arılar çiçekten çiçeğe neden uçar?", "examples": ["Arılar çiçekten çiçeğe neden uçar?", "Uğur böceği neden kırmızı?", "Papatya neden güneşe benzer?"] },
+  { "id": "39", "slug": "kukla-tiyatrosu", "name": "Kukla Tiyatrosu", "nameEn": "Felt Marionette Theatre", "desc": "Keçe ipli kuklalar, kadife perde, boyalı dekor", "topic": "Sincaplar kışa nasıl hazırlanır?", "examples": ["Sincaplar kışa nasıl hazırlanır?", "Ayılar neden kış uykusuna yatar?", "Kunduzlar barajı nasıl yapar?"] },
+  { "id": "40", "slug": "halk-damgasi", "name": "Halk Damgası", "nameEn": "Folk Stamp Print", "desc": "Üç renkli el damgası, aşınmış mürekkep, geometrik halk motifleri", "topic": "Turnalar neden V şeklinde uçar?", "examples": ["Turnalar neden V şeklinde uçar?", "Ağaçlar sonbaharda neden renk değiştirir?", "Leylekler nereye göç eder?"] },
+  { "id": "41", "slug": "ip-kabartma", "name": "İp Kabartma", "nameEn": "Cord & Yarn Relief", "desc": "Burgulu iplerle kumaşa dikilmiş kabartma resim", "topic": "Örümcek ağını nasıl örer?", "examples": ["Örümcek ağını nasıl örer?", "Salyangoz kabuğu neden sarmal?", "Sarmaşıklar nasıl tırmanır?"] }
+]

@@ -61,7 +61,7 @@
 
 Kategoriler: **El Yapımı** (01–09) · **Geleneksel Sanatlar** (10–13) · **Baskı & Çizim** (14–20) · **Işık & Dijital** (21–25)
 
-**Taslak stiller (26–37, şimdilik tek kare):** Siyanotip, Termal Kamera, Röntgen, Mikroskop, Nakış Kasnağı, Çıkartma Albümü, Neon Tabela, Kar Küresi, Eski Harita, Grafiti Duvarı, Dedektif Panosu, Sabun Köpüğü. Görseller: [`site/taslaklar`](site/taslaklar).
+**Taslak stiller (26–41, şimdilik tek kare):** Siyanotip, Termal Kamera, Röntgen, Mikroskop, Nakış Kasnağı, Çıkartma Albümü, Neon Tabela, Kar Küresi, Eski Harita, Grafiti Duvarı, Dedektif Panosu, Sabun Köpüğü, **Kabarık Nakış, Kukla Tiyatrosu, Halk Damgası, İp Kabartma**. Kalın yazılı dördünün İngilizce stil rehberi var; bu yüzden prompt oluşturucuda da seçilebilirler. Görseller ve rehberler: [`site/taslaklar`](site/taslaklar). Yeni taslak eklemek için görseli `site/taslaklar/NN-ad.jpg` olarak koy, `taslaklar.json` dosyasına bir satır ekle; istersen `NN-ad.md` rehberini yaz, sonra `node tools/build-site.cjs` çalıştır.
 
 ## Hızlı başlangıç
 
