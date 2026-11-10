@@ -61,6 +61,8 @@
 
 Kategoriler: **El Yapımı** (01–09) · **Geleneksel Sanatlar** (10–13) · **Baskı & Çizim** (14–20) · **Işık & Dijital** (21–25)
 
+**Taslak stiller (26–37, şimdilik tek kare):** Siyanotip, Termal Kamera, Röntgen, Mikroskop, Nakış Kasnağı, Çıkartma Albümü, Neon Tabela, Kar Küresi, Eski Harita, Grafiti Duvarı, Dedektif Panosu, Sabun Köpüğü. Görseller: [`site/taslaklar`](site/taslaklar).
+
 ## Hızlı başlangıç
 
 ### 1. Sadece prompt (kurulum yok)

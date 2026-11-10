@@ -264,6 +264,25 @@
   });
   renderTopics();
 
+  // ---- draft styles (still images only) ---------------------------------------------------------------------------
+  const DRAFTS = [
+    ['26', 'Siyanotip', 'siyanotip', 'Güneşte pozlanan mavi baskı; bitkilerin beyaz gölgeleri'],
+    ['27', 'Termal Kamera', 'termal-kamera', 'Isı renkleriyle görülen hayvanlar, kamera arayüzü'],
+    ['28', 'Röntgen', 'rontgen', 'Işıklı masada parlayan iskelet filmi'],
+    ['29', 'Mikroskop', 'mikroskop', 'Yuvarlak görüş alanında minik canlılar'],
+    ['30', 'Nakış Kasnağı', 'nakis-kasnagi', 'Keten kumaşta kanaviçe işleme'],
+    ['31', 'Çıkartma Albümü', 'cikartma-albumu', 'Beyaz kenarlı, parlak çıkartmalar'],
+    ['32', 'Neon Tabela', 'neon-tabela', 'Tuğla duvarda ışıklı neon tüpler'],
+    ['33', 'Kar Küresi', 'kar-kuresi', 'Cam fanus içinde minyatür kış dünyası'],
+    ['34', 'Eski Harita', 'eski-harita', 'Parşömen harita, pusula gülü, kesik çizgili yol'],
+    ['35', 'Grafiti Duvarı', 'grafiti-duvari', 'Sprey boya, akıntılar, kabarık harfler'],
+    ['36', 'Dedektif Panosu', 'dedektif-panosu', 'Mantar pano, polaroidler, kırmızı ip'],
+    ['37', 'Sabun Köpüğü', 'sabun-kopugu', 'Yanardöner ince zar, ışık oyunları'],
+  ];
+  $('#drafts').append(...DRAFTS.map(([id, name, slug, desc]) => h('a', { class: 'draft', href: `site/taslaklar/${id}-${slug}.jpg`, target: '_blank', rel: 'noopener' },
+    h('img', { src: `site/taslaklar/${id}-${slug}.jpg`, alt: `${name} taslağı`, loading: 'lazy' }),
+    h('span', { class: 'body' }, h('span', { class: 'name', text: `${id} · ${name}` }), h('span', { class: 'tag', text: desc })))));
+
   function useStyle(id, topic) {
     st.style = id;
     if (topic) st.topic = topic;
